@@ -7,7 +7,9 @@ edit_uri: ""
 
 nav:
   - Home: index.md
-  - NOMAD's ELN: T16_X/TX_X_eln.md
+  - Tutorial 16:
+    - Document Your Research: T16_X/T16_X_document_your_research.md
+
 plugins:
  - search
 theme:

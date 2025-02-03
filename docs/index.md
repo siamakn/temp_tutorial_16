@@ -14,7 +14,7 @@ In **FAIRmat tutorial 16**, you'll learn how to use **NOMAD** to manage and orga
 - 📥 **Upload raw data files** and inspect the extracted data structured in NOMAD’s data model.  
 - 🌐 **Visualize your data** directly in your browser, share them with collaborators, and publish them on NOMAD.  
 - 🗂️ **Create a dataset** and simulate publishing it with a DOI.  
-- 📖 **Document your research** with electronic lab notebooks (ELN) using NOMAD’s built-in templates.  
+- 📖 [**Document your research**](T16_X/T16_X_document_your_research.md) with electronic lab notebooks (ELN) using NOMAD’s built-in templates.  
 - 🛠️ **Create custom ELN templates** (demo).  
 - 🛠️ **Write a custom parser** for tabular data, such as `.csv` or `.xls` files (demo).  
 
