@@ -1,6 +1,3 @@
-# temp_tutorial_16
-Preparing materials for FAIRmat Tutorial 16
-
 # FAIRmat Tutorial 16: Getting started with NOMAD for materials-science research data management
 
 **Date:** February 26, 2025  
