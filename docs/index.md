@@ -5,6 +5,8 @@
 **Speakers:** Adrianna Wojas, Ahmed Mansour, Siamak Nakhaie  
 **Location:** Online  
 **Web:** [https://events.fairmat-nfdi.eu/event/34/](https://events.fairmat-nfdi.eu/event/34/)
+**Slides:**
+**Files:**
 
 In **FAIRmat tutorial 16**, you'll learn how to use **NOMAD** to manage and organize your materials-science research data. Whether you are working with computational or experimental data, NOMAD's graphical user interface makes it easy to upload, share, explore, and analyze your data. We will also focus on using NOMAD to improve collaboration on your research projects and to ensure that your data align with the FAIR data principles (Findable, Accessible, Interoperable, and Reusable).
 
