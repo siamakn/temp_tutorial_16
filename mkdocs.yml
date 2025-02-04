@@ -7,8 +7,15 @@ edit_uri: ""
 
 nav:
   - Home: index.md
-  - Tutorial 16:
-    - Document Your Research: T16_X/T16_X_document_your_research.md
+  - Contents:
+      - Search and Filter: T16_1/T16_1_search_and_filter.md
+      - Explore Data Records: T16_2/T16_2_explore_data_records.md
+      - Upload Raw Data Files: T16_3/T16_3_upload_raw_data_files.md
+      - Visualize Your Data: T16_4/T16_4_visualize_your_data.md
+      - Create a Dataset: T16_5/T16_5_create_a_dataset.md
+      - Document Your Research: T16_6/T16_6_document_your_research.md
+      - Create Custom ELN Templates: T16_7/T16_7_create_custom_eln_templates.md
+      - Write a Custom Parser: T16_8/T16_8_write_a_custom_parser.md
 
 plugins:
  - search
