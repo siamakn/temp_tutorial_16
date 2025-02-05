@@ -12,9 +12,9 @@ In **FAIRmat tutorial 16**, you'll learn how to use **NOMAD** to manage and orga
 
 ## What you'll do:
 - 🔍 [**Search and filter**](T16_1/T16_1_search_and_filter.md) through more than 19 million records using criteria such as materials, properties, or methods.    
-- 📊 [**Explore data records**](T16_2/T16_2_explore_data_records.md) and gain insights from the rich metadata structured in NOMAD's data model.
+- 🌐 [**Explore data records**](T16_2/T16_2_explore_data_records.md) and gain insights from the rich metadata structured in NOMAD's data model.
 - 📥 [**Upload raw data files**](T16_3/T16_3_upload_raw_data_files.md) and inspect the extracted data structured in NOMAD’s data model.
-- 🌐 [**Visualize your data**](T16_4/T16_4_visualize_your_data.md) directly in your browser, share them with collaborators, and publish them on NOMAD. 
+- 📊 [**Visualize your data**](T16_4/T16_4_visualize_your_data.md) directly in your browser, share them with collaborators, and publish them on NOMAD. 
 - 🗂️ [**Create a dataset**](T16_5/T16_5_create_a_dataset.md) and simulate publishing it with a DOI. 
 - 📖 [**Document your research**](T16_6/T16_6_document_your_research.md) with electronic lab notebooks (ELN) using NOMAD’s built-in templates.  
 - 🛠️ [**Create custom ELN templates**](T16_7/T16_7_create_custom_eln_templates.md) (demo).  
