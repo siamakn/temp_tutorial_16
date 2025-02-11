@@ -155,6 +155,81 @@ Now, let's create an entry using the built-in *Instrument ELN* schema for **UV O
     - Conductivity Board  
     - Spin Coater  
 
-    Use the *Instrument ELN* schema and include as many details as you like (e.g., Short Name, Datetime, ID, Description).  
+    Use the *Instrument ELN* schema and include as many details as you like (e.g., name, datetime, ID, description).  
 
     > **Tip:** Follow the [steps for creating an entry](#create-an-entry-using-nomads-built-in-schema).
+
+
+    ```md
+### Built-in Schema for Material Processing: *Material Processing ELN*
+
+Now, let's create an entry using the built-in *Material Processing ELN* schema for **Preparation of P3HT solution in chloroform**. Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Material Processing ELN* in step 3.
+
+??? example "Example: Creating an entry for P3HT solution preparation (screenshots)"
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_1.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_2_3_4.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_5_6.png" alt="create built-in schema" width="800">
+    </div>
+
+
+
+??? info "The input data fields that the built-in schema *Material Processing ELN* offers:"
+    The *Material Processing ELN* schema provides the following fields for input:
+    
+    - **name:** Automatically used as the entry file name.
+    - **starting time and ending time:** Allows entry of a date/time stamp for the process duration.
+    - **ID:** A unique, human-readable ID for the process.
+    - **location:** A text field specifying the location where the process took place.
+    - **description:** A free text field for additional information about the process.
+
+
+
+??? example "Continue the above example: Fill sdditional subsections available in the *data* subsection (screenshots):"
+    Additional subsections available in the *data* subsection include (screenshots): 
+    
+    - **steps:** Define the step-by-step procedure for the material processing. Here we add 3 steps for our process: polymer weighing, solvent filling, and mixing. to do this use the **+** in front of the **steps** subsection and add process step name and description. Don't forget to save after each step, and make sure you make the steps in order, because you cannot reorder them later. (see screenshots)
+  
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_6_to_11.png" alt="create built-in schema" width="800">
+    </div>
+
+
+    - **instruments:** List the instruments used in the process. (screenshots)
+  
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_12_13.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_14_15_16.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_17.png" alt="create built-in schema" width="800">
+    </div>
+
+    - **samples:** Specify the samples that are created or used in the process. Continue by adding the connection of your process to the resulting sample entities. (screenshot)
+  
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_18_19_20.png" alt="create built-in schema" width="800">
+    </div>
+
+    Note that the added information in the **subsections** will be used to automatically fill in the **Workflow Graph** as **tasks**, as well as **the References section**. You can find the **Workflow Graph**, in **OVERVIEW** tab of the entry. (screenshot)
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/workflow_graph.png" alt="create built-in schema" width="400">
+    </div>
+
+
+??? task "I suggest to put a checkpoint here, for those who did not follow"
+    something like: please download these files from here and drag and drop them to your upload.
+
+
