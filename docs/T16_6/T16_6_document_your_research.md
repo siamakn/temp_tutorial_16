@@ -228,6 +228,39 @@ Now, let's create an entry using the built-in *Material Processing ELN* schema f
         <img src="images/create_built-in_schema/workflow_graph.png" alt="create built-in schema" width="400">
     </div>
 
+    You can modify the workflow section by adding additional information such as **inputs**, **additional tasks**, and **outputs**. You can do this in the **workflow2** section. The **workflow2** section of the solution preparation example (ELNProcess) can be reached within the **solution preparation** entry -> **DATA tab** -> in the left side pane location **workflow2** section. We can now add inputs, either by **referencing to an existing entry** (e.g., the *ELNSubstance* we made for P3HT powder),:
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_21_22_23_24.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_25_26_27.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_28.png" alt="create built-in schema" width="800">
+    </div>
+
+    or by directly creating a new entry directly in the current *ELNprocess* (e.g., chloroform based on *ELNSubstance* in the following screenshots):
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_29_30_31.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_32_33_34.png" alt="create built-in schema" width="800">
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/create_material_processing_eln_step_35_36.png" alt="create built-in schema" width="800">
+    </div>
+
+    once the inputs P3HT and chloroform were added as inputs, you can check the updated **Wrokflow Graph** in the **OVERVIEW** tab:
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/workflow_graph_2.png" alt="create built-in schema" width="400">
+    </div>    
 
 ??? task "I suggest to put a checkpoint here, for those who did not follow"
     something like: please download these files from here and drag and drop them to your upload.
