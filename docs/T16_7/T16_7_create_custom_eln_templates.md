@@ -84,19 +84,19 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
 ??? info "5. Quantities are defined with type, shape and unit properties"
     Quantities define possible primitive values. The first line in the quantity definition includes a user-defined name for the quantitiy. The basic properties that go into a quantity definition are `type`, `shape`, and `unit`.
 
-```yaml
-definitions:
-  name: My NOMAD ELN
-  description: This is an electronic lab notebook schema that includes several sections.
+    ```yaml
+    definitions:
+    name: My NOMAD ELN
+    description: This is an electronic lab notebook schema that includes several sections.
 
-  sections:
-    My_first_section:
-      base_sections:
-        - nomad.datamodel.data.EntryData
-        - nomad.datamodel.metainfo.eln.Sample
-      quantities:
-        - type: #For example, str or np.float64
-        - shape: #For example scalar or list (['*'])
-        - unit: #For example, meters, amperes, or seconds
-        sub_sections:
-```
+    sections:
+        My_first_section:
+        base_sections:
+            - nomad.datamodel.data.EntryData
+            - nomad.datamodel.metainfo.eln.Sample
+        quantities:
+            - type: #For example, str or np.float64
+            - shape: #For example scalar or list (['*'])
+            - unit: #For example, meters, amperes, or seconds
+            sub_sections:
+    ```
