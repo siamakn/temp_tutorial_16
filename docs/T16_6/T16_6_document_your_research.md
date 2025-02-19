@@ -266,3 +266,61 @@ Now, let's create an entry using the built-in *Material Processing ELN* schema f
     something like: please download these files from here and drag and drop them to your upload.
 
 
+### Built-in Schema for Measurements: *Measurement ELN*
+
+Similar to the examples given above, you can also create an entry using the built-in *Measurement ELN* schema for your measurements.
+
+??? example "Example: Creating an entry for Optical Absorption Measurement (steps)"
+    - Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Measurement ELN* in step 3.
+    - Use the referencing option to the existing entries, or create new entries to connect to your *Measurement ELN*, similar to the steps **13-17** and **31-36** in the [Built-in Schema for Material Processing](#built-in-schema-for-material-processing-eln).
+
+??? info "Key input fields in *Measurement ELN*:"
+    - Similar to other entries, we have **name**, **starting Time**, **ID**, **location**, **description**.
+    - Subsections such as **steps**, **samples**, **instruments** used in measurement.
+
+
+### *Experiment ELN* Schema: Integrating Your Experiment
+
+Once all substances, samples, processes, and measurements are defined, you can integrate them into a structured workflow using the *Experiment ELN* schema. The *Experiment ELN* schema allows linking **processes** and **measurements** into a single entry for a comprehensive overview of your experiment.
+
+??? example "Example: Creating an Experiment ELN Entry (steps)"
+    - Create an entry using the built-in **Experiment ELN** schema.
+    - Provide a **name**, **description**, and link relevant **processes** and **measurements**.
+    - Save the entry to establish a structured record of your experiment.
+    Following, you see screensots of how your experiment entry and workflow graph will look like **after** you integrated your **processes** and **measurements** to your **experiment**.
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/steps2.gif" alt="create built-in schema" width="800">
+    </div>
+
+    the data section looks like the following:
+
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/steps3.png" alt="create built-in schema" width="400">
+    </div>
+    The **Workflow Graph** automatically updates and will look similar to the following
+    <div style="text-align: center;">
+        <img src="images/create_built-in_schema/interactive_work_flow.gif" alt="interactive workflow gif" width="400">
+    </div>  
+
+
+
+### Organize your files using NOMAD
+
+NOMAD is a file-based system, allowing structured data management. You can access, organize, and download your files within each upload. You can also create folders to categorize entries into materials, samples, instruments, processes, and results as well as upload additional documents, such as relevant pdf documents.
+
+??? example "Example: Organizing Files in NOMAD"
+    - Navigate to the **FILES** tab in your upload.
+    - View and manage files like in a file explorer. 
+    <div style="text-align: center;">
+        <img src="images/organization/files_explorer_in_NOMAD.png" alt="interactive workflow gif" width="400">
+    </div>  
+    <div style="text-align: center;">
+        <img src="images/organization/creating_new_folders.gif" alt="interactive workflow gif" width="400">
+    </div>  
+    <div style="text-align: center;">
+        <img src="images/organization/moving_files_to_a_folder.gif" alt="interactive workflow gif" width="400">
+    </div>  
+    <div style="text-align: center;">
+        <img src="images/organization/after_organization.png" alt="interactive workflow gif" width="400">
+    </div>  
