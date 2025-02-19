@@ -102,25 +102,26 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
           sub_sections:
     ```
 
-    ??? info "6. Section and quantities can have annotations"
-    Annotations provide additional information that NOMAD can use to alter its behavior around these definitions and how users can interact with them. The keyword for annotations is `m_annotations`.
-    ```yaml
-    definitions:
-      name: My NOMAD ELN
-      description: This is an electronic lab notebook schema that includes several sections.
+??? info "6. Section and quantities can have annotations"
+Annotations provide additional information that NOMAD can use to alter its behavior around these definitions and how users can interact with them. The keyword for annotations is `m_annotations`.
+```yaml
+definitions:
+  name: My NOMAD ELN
+  description: This is an electronic lab notebook schema that includes several sections.
 
-      sections:
-        My_first_section:
-          base_sections:
-            - nomad.datamodel.data.EntryData
-            - nomad.datamodel.metainfo.eln.Sample
-          quantities:
-            first_quantity:
-              - type: #For example, str or np.float64
-              - shape: #For example scalar or list (['*'])
-              - unit: #For example, meters, amperes, or seconds
-              m_annotations:
-                annotation_name:
-                  key1: value1  
-          sub_sections:
-    ```    
+  sections:
+    My_first_section:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+        - nomad.datamodel.metainfo.eln.Sample
+      quantities:
+        first_quantity:
+          - type: #For example, str or np.float64
+          - shape: #For example scalar or list (['*'])
+          - unit: #For example, meters, amperes, or seconds
+          m_annotations:
+            annotation_name:
+              key1: value1  
+      sub_sections:
+```
+
