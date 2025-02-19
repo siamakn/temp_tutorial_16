@@ -303,7 +303,7 @@ Once all substances, samples, processes, and measurements are defined, you can i
         <img src="images/create_built-in_schema/interactive_work_flow.gif" alt="interactive workflow gif" width="400">
     </div>  
 
-
+<!--
 
 ### Organize your files using NOMAD
 
@@ -324,3 +324,4 @@ NOMAD is a file-based system, allowing structured data management. You can acces
     <div style="text-align: center;">
         <img src="images/organization/after_organization.png" alt="interactive workflow gif" width="400">
     </div>  
+-->
