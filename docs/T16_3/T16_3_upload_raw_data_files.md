@@ -1,3 +1,5 @@
+**The key elements in NOMAD**
+
 To get started in the journey of uploading raw files to publishing datasets with DOI in NOMAD, you will need to understand the key elements of this process in NOMAD:
 
 1. NOMAD Users
@@ -14,7 +16,7 @@ You can create an upload for each project, and you can structure them into neste
 
 ??? info "Key features of NOMAD **Uploads**"
     - **Creation:** Uploads are created and managed by users.
-    - **Structure:** Uploads are associated to a user account and are listed in the *my uploads* page in the GUI. The serve as containers for multiple files and Entries, preserving their directory structure and metadata. 
+    - **Structure:** Uploads are associated to a user account and are listed in the *my uploads* page in the GUI. They serve as containers for multiple files and Entries, preserving their directory structure and metadata. 
     - **Organization:** Each upload can contain multiple files organized into directories.
     - **Sharing & Publishing:** Entries and files can only be shared, transferred, or published as complete uploads.
 
@@ -24,18 +26,23 @@ You can create an upload for each project, and you can structure them into neste
     - **Organization:** Entries belong to specific uploads and are linked to a raw file that NOMAD has recognized and parsed.  
     - **Sharing & Publishing:** Entries can be shared as part of an upload, and individual Entries can be added to datasets, which can be published with a DOI.  
 
-### Where are my uploads?
+??? info "Key features of NOMAD **Datasets**"
+    - **Creation:** Datasets are created and managed by users.
+    - **Structure:** Datasets are associated to a user account and are listed in the *Your datasets* page in the GUI. They serve as containers for curated and related data Entires. 
+    - **Organization:** Datasets conatins several Entries from various uploads. Each entry can be contained in many dataset.
+    - **Sharing & Publishing:** Datasets are published independent of uploads and you can get a DOI for your datasets.
 
-The uploads exist in the “Your uploads” page. You can reach there by clicking on **uploads** in the **Publish** menu.
+For more detailed explanation, you can refer to the [NOMAD documentation page](https://nomad-lab.eu/prod/v1/docs/explanation/basics.html). 
+
+### Task 1: Create new upload
+
+The uploads exist in the “Your uploads” page. You can reach there by clicking on **Uploads** in the **PUBLISH** menu.
 
 Here you can view a list of all your uploads with their relevant information. 
 
 You can also create new uploads or add an example upload prepared by others.
 
 ![Navigate to "Your uploads" page by hovering over the Publish menu, then clicking on uploads](images/navigating_to_uploads_cropped.png)
-
-### Task 1: Create new upload
-
 To create a new upload, click on the `CREATE A NEW UPLOAD` button. 
 
 A new page will open and an upload ID will be automatically assigned.
@@ -52,8 +59,6 @@ A new page will open and an upload ID will be automatically assigned.
     - **Files:** This view shows all the files included in upload, whether they are raw files, or processed files. You can also organize these files into folders as needed. 
     ![A screenshot of the uploads files page](images/uploads_files_page.png)
 
-### Task 2: Rename your upload
-
 When you create a new upload, it is automatically assigned the default name *unnamed upload*.
 
 To rename it, click on the <img src="images/change_name_icon.png" alt="Change Name Icon" width="20"> icon next to the name. 
@@ -63,7 +68,7 @@ This will make the name field editable, allowing you to enter a clear and descri
 ![Alt text](images/create_upload_step_5_6.png)
 
 
-### Task 3: Share your upload with a colleague
+### Task 2: Share your upload with a colleague
 
 Uploads in NOMAD can be shared and published.
 
@@ -80,16 +85,68 @@ When you share/publish an upload, all included entries and files will be shared/
     - Once published, the upload becomes immutable, meaning its contents can no longer be modified. 
     - You also have the option to publish with an embargo period, temporarily restricting public access until the embargo expires. 
 
-A NOMAD upload can have four statuses based on sharing and publishing::
+A NOMAD upload can have four states based on sharing and publishing:
 
 |Status    | Icon   | Description                         |
 |----------|--------|-------------------------------------|
-|Private   |!["Icon of unpublished upload"](images/icon_unpublished.png)|The upload is only visible to the uploader only.|
-|Shared    |![Icon of shared upload](images/icon_unpublished_shared.png) |The upload is accessible to selected users but not publicly available.|
-|Published |![Icon of published upload](images/icon_published.png)       |The upload is publicly available to everyone.|
-|Visible   |![Icon of visible upload](images/icon_visible.png)           |The upload is unpublished but accessible to everyone.|
+|Private   |<img src="images/icon_unpublished.png" alt="Icon of private upload" width="20"> |The upload is private and is visible to the uploader only.|
+|Shared    |<img src="images/icon_shared.png" alt="Icon of shared upload" width="20">       |The upload is accessible to selected users but not publicly available.|
+|Published |<img src="images/icon_published.png" alt="Icon of published upload" width="20"> |The upload is publicly available to everyone.|
+|Visible   |<img src="images/icon_visible.png" alt="Icon of visible upload" width="20">     |The upload is unpublished but accessible to everyone.|
 
+You can manage upload sharing in the Edit upload members menu. To access it, click on <img src="images/edit_upload_members_icon.png" alt="Edit upload members Icon" width="20"> available on the top of the upload page. at the top of the upload page. 
 
+Alternatively, you can click the `EDIT UPLOAD MEMBERS` button below the list of entries on your upload page.
+
+??? task "Task 2.1: share your upload"
+    <img src="images/icon_shared.png" alt="Icon of shared upload" width="30">
+
+    **Step 1:** Open the Edit upload members window, but clicking on the `EDIT UPLOAD MEMBERS` button.
+
+    **Step 2:** Start typing the name of the NOMAD user you want to share the upload with. A list of matching users will appear—select the correct name from the list.
+
+    **Step 3:** Assign a role to the user by selecting either Coauthor or Reviewer from the dropdown menu.
+        - Coauthors can edit and add files to the upload.
+        - Reviewers can only view the contents of the upload (no editing rights).
+
+    **Step 4:** Click on the submit button. 
+
+    ![screenshots of the steps of sharing your upload](images/sharing_an_upload.png)
+
+??? task "Task 2.2: make your upload visible to everyone"
+    <img src="images/icon_visible.png" alt="Icon of shared upload" width="30">
+
+    To make your upload visible to everyone on NOMAD, simple check the box in the *Edit visibility and access* section, located under the list of your entries. 
+
+    This setting allows all users, including guests without an account, to view the upload even before it is officially published.
+
+    You can still modify the upload’s access settings and edit its contents while it remains visible.
+
+    ![screenshot of the steps of making an upload visible](images/making_an_upload_visible.png)
+??? task "Task 2.3: Publish your upload"
+    <img src="images/icon_published.png" alt="Icon of shared upload" width="30">
+
+    !!! warning "Once an upload is published, it can not be deleted, and the files and entries can not be changed"
+
+    **Step 1:** Select an embargo period (if needed) from the dropdown menu, located in the *publish* section located at the bottom of the upload page. 
+
+    If you would like to publish immediatly, select *No embargo*.
+
+    **Step 2:** Click on the `PUBLISH` button.
+
+    **Step 3:** A prompt for confirmation appears on the screen. Click on PUBLISH. 
+
+    ![screenshots of the steps to publish an upload](images/publishing_an_upload.png)
+
+    Having an embarog on your data means:
+        - Raw files and entries remain hidden, except to you and users you share the data with.
+        - Some metadata (e.g., chemical formula, system type, spacegroup) will be public.
+        - Embargoed entires can be added to datasets and be assigned DOIs.
+        - The embargo can be lifted eariler than the assigned duration by the user. 
+
+    The following image shows an example of an embargoed upload and the option to lift the embargo by clicking the `LIFT EMBARGO` button.
+
+    ![screenshot of an embargoed upload](images/embargoed_upload.png)
 ### Task 4: Add files to your upload
 
 Lets start adding files to your NOMAD upload. We will explore three different examples:
