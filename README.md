@@ -7,7 +7,7 @@ Preparing materials for FAIRmat Tutorial 16
 **Time:** 13:00–16:00 CET  
 **Speakers:** Adrianna Wojas, Ahmed Mansour, Siamak Nakhaie  
 **Location:** Online  
-**Web:** [https://events.fairmat-nfdi.eu/event/34/](https://events.fairmat-nfdi.eu/event/34/)
+**Web:** [https://events.fairmat-nfdi.eu/event/34/](https://events.fairmat-nfdi.eu/event/34/)  
 **Slides and files:** Download [here](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials)
 
 
