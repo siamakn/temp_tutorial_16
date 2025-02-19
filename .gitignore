@@ -1,8 +1,6 @@
 # Draft folder on local to prepare materials
 draft_files/
 
-# to track empty folders containing the .gitkeep file
-.gitkeep
 # Nomad specific and extra patterns needs to be ignored
 .*env/
 .pyenv*/
