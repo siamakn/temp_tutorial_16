@@ -98,7 +98,7 @@ You can manage upload sharing in the Edit upload members menu. To access it, cli
 
 Alternatively, you can click the `EDIT UPLOAD MEMBERS` button below the list of entries on your upload page.
 
-??? task "Task 2.1: share your upload"
+??? task "Share your upload"
     <img src="images/icon_shared.png" alt="Icon of shared upload" width="30">
 
     **Step 1:** Open the Edit upload members window, but clicking on the `EDIT UPLOAD MEMBERS` button.
@@ -113,7 +113,7 @@ Alternatively, you can click the `EDIT UPLOAD MEMBERS` button below the list of 
 
     ![screenshots of the steps of sharing your upload](images/sharing_an_upload.png)
 
-??? task "Task 2.2: make your upload visible to everyone"
+??? task "Make your upload visible to everyone"
     <img src="images/icon_visible.png" alt="Icon of shared upload" width="30">
 
     To make your upload visible to everyone on NOMAD, simple check the box in the *Edit visibility and access* section, located under the list of your entries. 
@@ -123,7 +123,7 @@ Alternatively, you can click the `EDIT UPLOAD MEMBERS` button below the list of 
     You can still modify the upload’s access settings and edit its contents while it remains visible.
 
     ![screenshot of the steps of making an upload visible](images/making_an_upload_visible.png)
-??? task "Task 2.3: Publish your upload"
+??? task "Publish your upload"
     <img src="images/icon_published.png" alt="Icon of shared upload" width="30">
 
     !!! warning "Once an upload is published, it can not be deleted, and the files and entries can not be changed"
@@ -147,7 +147,7 @@ Alternatively, you can click the `EDIT UPLOAD MEMBERS` button below the list of 
     The following image shows an example of an embargoed upload and the option to lift the embargo by clicking the `LIFT EMBARGO` button.
 
     ![screenshot of an embargoed upload](images/embargoed_upload.png)
-### Task 4: Add files to your upload
+### Task 3: Add files to your upload
 
 Lets start adding files to your NOMAD upload. We will explore three different examples:
 
@@ -178,7 +178,7 @@ Adding files to your upload can be done with individual files, or you can group 
 
     - NOMAD allows you to preview common file formats that are not automatically parsed. This means you can view the contents of the file directly within the platform without having to download it. Examples include: `.txt`, `.csv`, `.pdf`, `.png`, `.jpg`.
 
-#### Task 4.1: Uploading miscellaneous files
+#### Task 3.1: Uploading miscellaneous files
 
 ??? example "Download the example files for this excercise"
     We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/d/92b34ea0e8604e64a079/). 
@@ -200,28 +200,27 @@ Adding files to your upload can be done with individual files, or you can group 
 
 Note that these files will not create entires in NOMAD, because a built-in parser for them doesn't exist. 
 
-They will be stored in your upload and can be accessed and shared with your colleagues, however, they will not be searchable within NOMAD. 
-
-In this case, NOMAD acts as a typical storage cloud!
+They will be stored in your upload and can be accessed and shared with your colleagues, however, they will not be searchable within NOMAD. In this case, NOMAD acts as a typical storage cloud!
 
 You can add these files to your NOMAD upload do so by simply drag and drop the file or by opening the dialog to browse the files in your device.
 
-**Drag and drop**
+??? task "Uploading images, pdf files, text files, and tabular data"
+    **Drag and drop**
 
-Start with uploading the file `FAIRmat_graphics.zip`. Lets use the drag and drop method as shown in the animation below. 
+    Start with uploading the file `FAIRmat_graphics.zip`. Lets use the drag and drop method as shown in the animation below. 
 
-![An animatation demonstrating the drag-and-drop files in NOMAD ](images/example_3-1_drag_drop_files.gif)
+    ![An animatation demonstrating the drag-and-drop files in NOMAD ](images/example_3-1_drag_drop_files.gif)
 
-When a compressed file is uploaded to NOMAD, it will be extracted automatically and the included files will be added to your upload.
+    When a compressed file is uploaded to NOMAD, it will be extracted automatically and the included files will be added to your upload.
 
-**Open the file browser dialog**
+    **Open the file browser dialog**
 
-Upload the remaining files using the file browser dialog as shown in the animation below. 
+    Upload the remaining files using the file browser dialog as shown in the animation below. 
 
-![An animatation demonstrating the open from file browser dialog in NOMAD ](images/example_3-1_file_browser_dialog.gif)
+    ![An animatation demonstrating the open from file browser dialog in NOMAD ](images/example_3-1_file_browser_dialog.gif)
 
 
-#### Task 4.2: Uploading computations data files
+#### Task 3.2: Uploading computations data files
 
 ??? example "Download the example files for this excercise"
     We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/f/f6b51d915fc0435ba9bb/?dl=1). 
@@ -242,12 +241,14 @@ NOMAD has a parser for the *exciting* code. This means it will create an **Entry
 
 In other words, NOMAD will read exciting input and output files and provide all information in NOMAD's unified Metainfo data schema.
 
-**Uploading the files**
+??? task "Uploading input and output files of DFT and GW calculation"
 
-Start with uploading the file `Si_gw.zip`. Lets use the drag and drop method as shown in the animation below. 
-TOBECOMPLETED
+    **Uploading the files**
 
-#### Task 4.3: Uploading experiments data files
+    Start with uploading the file `Si_gw.zip`. Lets use the drag and drop method as shown in the animation below. 
+    TOBECOMPLETED
+
+#### Task 3.3: Uploading experiments data files
 
 ??? example "Download the example files for this excercise"
     We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/d/344e53d8e2f341639739/). 
@@ -271,103 +272,100 @@ These files can be uploaded directly to NOMAD, where they are processed, and str
 
 Most scientific instruments generate experimental results in formats other than `.nxs`. NOMAD still supports these files by providing a conversion process using the **NexusDataConverter** built-in schema, which transforms raw data into the `.nxs` format.
 
+??? task "Uploading experimental data in the `.nxs` format"
 
- 
+    Start with uploading the file `PBTTT_XPS_SPECS.nxs`. Lets use the drag and drop method as shown in the animation below.
 
-**Uploading experimental data in the `.nxs` format**
+    ![An animatation demonstrating the drag-and-drop of NeXuS files in NOMAD](images/example_3-3_drag_drop_files_nexus.gif)
 
-Start with uploading the file `PBTTT_XPS_SPECS.nxs`. Lets use the drag and drop method as shown in the animation below.
+    The file is parsed by NOMAD and an Entry is created. Clicking on right arrow next to an entry navigates you to the respective entry page.
 
-![An animatation demonstrating the drag-and-drop of NeXuS files in NOMAD](images/example_3-3_drag_drop_files_nexus.gif)
-
-The file is parsed by NOMAD and an Entry is created. Clicking on right arrow next to an entry navigates you to the respective entry page.
-
-![Screenshot of navigating to the Entry page](images/example_3-3_navigating_to_entry.png)
+    ![Screenshot of navigating to the Entry page](images/example_3-3_navigating_to_entry.png)
 
 
-??? info "The main elements of the **Entry** page"
-    On the entry page, you will see the detailed informatoin about your entry, divided into 4 main tabs:
-    
-    - **OVERVIEW Tab:**
-
-        1- On the left, core metadata are displayed.
-
-        2- On the right, various cards present the available information. 
+    ??? info "The main elements of the **Entry** page"
+        On the entry page, you will see the detailed informatoin about your entry, divided into 4 main tabs:
         
-        The cards you see depend on the properties or data available for that entry.
+        - **OVERVIEW Tab:**
+
+            1- On the left, core metadata are displayed.
+
+            2- On the right, various cards present the available information. 
+            
+            The cards you see depend on the properties or data available for that entry.
+            
+            For `.nxs` files, two main cards appear in the overview page: the data viewer and the materials card.
+
+            ![screenshot of the NeXuS entry overview page](images/example_3-3_overview_entry_nexus.png)
+
+        - **FILES Tab:** 
         
-        For `.nxs` files, two main cards appear in the overview page: the data viewer and the materials card.
+            This tab shows the uploaded files. NOMAD lists all files in the same directory, as they usually belong together.
 
-        ![screenshot of the NeXuS entry overview page](images/example_3-3_overview_entry_nexus.png)
+        - **DATA Tab:**
 
-    - **FILES Tab:** 
-    
-        This tab shows the uploaded files. NOMAD lists all files in the same directory, as they usually belong together.
+            Also known as the "processed data" tab, this shows the results of the parsing and normalization process done by NOMAD. 
+            
+            NOMAD puts all the data in a unified, hierarchical, and machine-processable format, following the NOMAD metainfo.
 
-    - **DATA Tab:**
-
-        Also known as the "processed data" tab, this shows the results of the parsing and normalization process done by NOMAD. 
-        
-        NOMAD puts all the data in a unified, hierarchical, and machine-processable format, following the NOMAD metainfo.
-
-        ![Animation of the DATA Tab in NeXuS entry page](images/example_3-3_data_tab_entry_page_nexus.gif)
+            ![Animation of the DATA Tab in NeXuS entry page](images/example_3-3_data_tab_entry_page_nexus.gif)
 
 
-**Uploading experimental data in the `.xml` format**
+??? task "Uploading experimental data in the `.xml` format"
 
-XPS measurements made with commercially available instruments are not provided with the `.nxs` format. 
+    XPS measurements made with commercially available instruments are not provided with the `.nxs` format. 
 
-One the file formats provided natively by these instrument is `.xml`.
+    One the file formats provided natively by these instrument is `.xml`.
 
-In this exercise, you will learn how to upload a raw file from a SPECS instrument in `.xml` format by using the NexusDataConverter. You will do this in two ways:
+    In this exercise, you will learn how to upload a raw file from a SPECS instrument in `.xml` format by using the NexusDataConverter. You will do this in two ways:
 
-1. Uploading only the raw file.
-2. Uploading both the raw file and an ELN file, enriching your data with metadata and ensuring compliance with community standards.
+    1. Uploading only the raw file.
+    2. Uploading both the raw file and an ELN file, enriching your data with metadata and ensuring compliance with community standards.
 
-**Step 1:** Click on the `CREATE FROM SCHEMA` button in your upload page.
-![Screenshot of step 1](images/example_3-3_create_from_schema.png)
+    **Step 1:** Click on the `CREATE FROM SCHEMA` button in your upload page.
+    ![Screenshot of step 1](images/example_3-3_create_from_schema.png)
 
-**Step 2:** In the *create new entry from schema* window, click on the drop-down menue of the built-in schema, and select `NexusDataConverter`
+    **Step 2:** In the *create new entry from schema* window, click on the drop-down menue of the built-in schema, and select `NexusDataConverter`
 
-**Step 3:** Give a descriptive name for the entry.
+    **Step 3:** Give a descriptive name for the entry.
 
-**Step 4:** Click on CREATE. This will take you the NexusDataConverter Entry page. 
+    **Step 4:** Click on CREATE. This will take you the NexusDataConverter Entry page. 
 
-![Screenshot of steps 2 - 4](images/example_3-3_NexusDataConverter.png)
+    ![Screenshot of steps 2 - 4](images/example_3-3_NexusDataConverter.png)
 
-**Step 5:** From the reader drop-down menu, choose the approperiate reader for your files. For this exercise select *xps*.
+    **Step 5:** From the reader drop-down menu, choose the approperiate reader for your files. For this exercise select *xps*.
 
-**Step 6:** From the nxdl drop-down menu, choose the approperiate application definition for your experiment. For this exercise select *NXxps*
+    **Step 6:** From the nxdl drop-down menu, choose the approperiate application definition for your experiment. For this exercise select *NXxps*
 
-??? info "NexusDataConverter readers and the NeXuS application definitions"
-    **A Reader** is a program designed to interpret and extract data from a specific experimental technique or file format. 
+    ??? info "NexusDataConverter readers and the NeXuS application definitions"
+        **A Reader** is a program designed to interpret and extract data from a specific experimental technique or file format. 
 
-    The reader understands the structure and encoding of the particular data format and provides methods for accessing its contents in a programmatically friendly way.
-    It acts as a bridge between raw experimental data and NOMAD by converting the data into the structured file format according to domain-specific application definitions. 
+        The reader understands the structure and encoding of the particular data format and provides methods for accessing its contents in a programmatically friendly way.
+        It acts as a bridge between raw experimental data and NOMAD by converting the data into the structured file format according to domain-specific application definitions. 
 
-    A list of available readers can be found [here](https://fairmat-nfdi.github.io/pynxtools/reference/plugins.html)
+        A list of available readers can be found [here](https://fairmat-nfdi.github.io/pynxtools/reference/plugins.html)
 
-    **A NeXus application definition** provides a structured specification of the terms and metadata required in an `.nxs` data file for a particular scientific application. These definitions outline the minimum set of terms that must be included in the data file for it to be considered valid according to the NeXus format.
+        **A NeXus application definition** provides a structured specification of the terms and metadata required in an `.nxs` data file for a particular scientific application. These definitions outline the minimum set of terms that must be included in the data file for it to be considered valid according to the NeXus format.
 
-    A list of NeXuS application definitions developed by FAIRmat can be found [here](https://fairmat-nfdi.github.io/nexus_definitions/)
+        A list of NeXuS application definitions developed by FAIRmat can be found [here](https://fairmat-nfdi.github.io/nexus_definitions/)
 
-    NexusDataConverter uses **readers** to interpret the raw data files, and then structures them according to the outlines of the **application definitions**
+        NexusDataConverter uses **readers** to interpret the raw data files, and then structures them according to the outlines of the **application definitions**
 
-**Step 7:** Upload the raw data file `PBTTT_XPS_SPECS_raw.xml`.
+    **Step 7:** Upload the raw data file `PBTTT_XPS_SPECS_raw.xml`.
 
-**Step 8:** Give a descriptive name for the generated `.nxs` file.
+    **Step 8:** Give a descriptive name for the generated `.nxs` file.
 
-**Step 9:** Click on the save icon to start the conversion process. 
+    **Step 9:** Click on the save icon to start the conversion process. 
 
-![Screenshots of steps 5 - 9](images/example_3-3_NexusDataConverter_2.png)
+    ![Screenshots of steps 5 - 9](images/example_3-3_NexusDataConverter_2.png)
 
-Check the overview page of your upload. There you will fine two newly created entries; one for the NexusDataConverter and one for the generated `.nxs` file from you your raw file. 
+    Check the overview page of your upload. There you will fine two newly created entries; one for the NexusDataConverter and one for the generated `.nxs` file from you your raw file. 
 
-NOMAD still stores your `.xml` raw file in the upload directory. 
+    NOMAD still stores your `.xml` raw file in the upload directory. 
 
-![Screenshot of the upload page after nexus conversion.](images/example_3-3_NexusDataConverter_3.png)
+    ![Screenshot of the upload page after nexus conversion.](images/example_3-3_NexusDataConverter_3.png)
 
 
-**Uploading experimental data in the `.xml` format with additional ELN data**
+??? task "Uploading experimental data in the `.xml` format with additional ELN data"
 
-TOBECOMPLETED
+    TOBECOMPLETED
