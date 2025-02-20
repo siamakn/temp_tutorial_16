@@ -30,11 +30,14 @@ Alternatively, if you would like to add selected entries from your Upload, click
 
 User created datasets exist in the “Your datasets page” page. You can reach there by clicking on **Datasets** in the **PUBLISH** menu.
 
-Here you can view a list of all your created datasets with their relevant information and assign them a DOI. 
+Here you can view a list of all your created datasets with their relevant information and assign them a DOI.
+
+!!! warning "Assigning a DOI makes the dataset permanent—it cannot be modified or deleted."
+    If you want to test the process without actually publishing the data, you can do so in the [NOMAD test installation](https://nomad-lab.eu/prod/v1/test/gui/about/information).
 
 ![screenshot of navigating to datasets](images/navigating_to_datasets.png)
 
-Click on the *arrow* icon next to the dataset to view entries that are part of the dataset. This will take you to the dataset page, with a list of all entries included. 
+Click on the <img src="images/go_to_icon.png" alt="Go to arrow Icon" width="15"> icon next to the dataset to view entries that are part of the dataset. This will take you to the dataset page, with a list of all entries included. 
 
 ![screenshot of the dataset page](images/dataset_page.png)
 
