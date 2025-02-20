@@ -267,13 +267,13 @@ In other words, NOMAD will read the input and output files and provide all infor
     
         For *FHI-aims* files, three main cards appear in the overview page: 
 
-        - *Materials* card showing key information and visulization of the composition and conventional cell.
+        - *Materials* card: shows key information and visulization of the composition and conventional cell.
         <img src="images/example_3-2_materials_card.png" alt="screenshot of electronic properties card" width="250">
 
-        - *Electronic properties* card showing the calculated band structure, density of states, and Brillouin zone.
+        - *Electronic properties* card: shows the calculated band structure, density of states, and Brillouin zone.
         <img src="images/example_3-2_electronic_properties_card.png" alt="screenshot of materials card" width="250">
 
-        - *Workflow Graph* illustrating the various steps, thier inputs, and outputs. 
+        - *Workflow Graph* card: illustrates the various steps in the calculation, including their inputs and outputs. 
         <img src="images/example_3-2_workflow_card.png" alt="screenshot of workflow card" width="250">
 
     - **FILES** tab:
