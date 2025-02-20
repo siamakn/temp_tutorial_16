@@ -41,6 +41,6 @@ Click on the <img src="images/go_to_icon.png" alt="Go to arrow Icon" width="15">
 
 ![screenshot of the dataset page](images/dataset_page.png)
 
-You can assign a DOI for your Dataset by clicking on the *ribbon* icon next to the Dataset.
+You can assign a DOI for your dataset by clicking on the <img src="images/doi_dataset_icon.png" alt="Assign a DOI icon" width="15"> icon next to the dataset.
 
 ![screenshot of assigning a DOI](images/dataset_doi.png)
