@@ -67,7 +67,6 @@ This will make the name field editable, allowing you to enter a clear and descri
 ![Alt text](images/create_upload_step_4.png)
 ![Alt text](images/create_upload_step_5_6.png)
 
-
 ### Task 2: Share your upload with a colleague
 
 Uploads in NOMAD can be shared and published.
@@ -147,6 +146,7 @@ Alternatively, you can click the `EDIT UPLOAD MEMBERS` button below the list of 
     The following image shows an example of an embargoed upload and the option to lift the embargo by clicking the `LIFT EMBARGO` button.
 
     ![screenshot of an embargoed upload](images/embargoed_upload.png)
+
 ### Task 3: Add files to your upload
 
 Lets start adding files to your NOMAD upload. We will explore three different examples:
@@ -227,26 +227,68 @@ You can add these files to your NOMAD upload do so by simply drag and drop the f
     
     Download the folder to your local machine at you preferred directory.
 
-    This folder contains the input and output files of DFT and GW calculations for Silicon using the *exciting* code.
+    This folder contains the input and output files of a DFT calculation for Iron(III) Oxide using the *FHI-aims* code.
 
-    <img src="images/example_3-2_input_output_files.png" alt="Screenshot of the input and output files of the calcuation" width="400">
-
-    *exciting* is a full-potential all-electron density-functional-theory package implementing linearized augmented planewave methods. It can be applied to all kinds of materials, irrespective of the atomic species involved and allows for exploring the physics of core electrons. [More information on this link](https://exciting-code.org/)
+    FHI-aims* an all-electron density-functional-theory package that employs numeric atom-centered basis functions. It is designed for accurate and efficient simulations of molecules, clusters, surfaces, and bulk materials across the periodic table. Its advanced treatment of electronic structure allows for precise calculations of material properties, including band structures, total energies, and magnetic properties. [More information in this link](https://fhi-aims.org/)
 
 
+The calculations in this example were preformed using a code that is supported by NOMAD, i.e. the *FHI-aims* code.  
 
-The calculations in this example were preformed using a code that is supported by NOMAD, i.e. the *exciting* code.  
+NOMAD has a parser for the *FHI-aims* code. This means it will create an **Entry** for these data. 
 
-NOMAD has a parser for the *exciting* code. This means it will create an **Entry** for these data. 
+In other words, NOMAD will read the input and output files and provide all information in NOMAD's unified Metainfo data schema.
 
-In other words, NOMAD will read exciting input and output files and provide all information in NOMAD's unified Metainfo data schema.
-
-??? task "Uploading input and output files of DFT and GW calculation"
+??? task "Uploading input and output files `.zip` of a DFT calculation"
 
     **Uploading the files**
 
-    Start with uploading the file `Si_gw.zip`. Lets use the drag and drop method as shown in the animation below. 
-    TOBECOMPLETED
+    Start with uploading the file `FHI-aims.zip`. Lets use the drag and drop method as shown in the animation below. 
+
+    ![Animation of darg and droping a compressed file in NOMAD](images/example_3-2_drag_drop_files.gif)
+
+    After uploading files, processing is automatically triggered. This involves identifying supported file formats in NOMAD and extracting relevant (meta)data. The exact processing steps depend on the use case.
+    For example, you can learn more about the [processing of computational data on this link](https://nomad-lab.eu/prod/v1/docs/examples/computational_data/uploading.html#processing-of-computational-data).
+
+    Once processing is complete, NOMAD generates an Entry page that presents the data in a structured, hierarchical format based on the NOMAD *metainfo* schema. 
+
+    **Opening and exploring your Entry**
+    
+    To go to the entry page, click on the <img src="images/go_to_icon.png" alt="Go to arrow Icon" width="15"> icon next to the entry. Here you can view the metadata and useful visulaization of your data, check the uploaded files, and explore your entry in details. 
+
+    - **OVERVIEW** tab:
+
+        1- On the left, core metadata are displayed.
+
+        2- On the right, various cards present the available information. 
+
+        <img src="images/example_3-2_overview.png" alt="screenshot of the overview page" width="800">
+        
+        The cards you see depend on the properties or data available for that entry.
+    
+        For *FHI-aims* files, three main cards appear in the overview page: 
+
+        - *Materials* card showing key information and visulization of the composition and conventional cell.
+        <img src="images/example_3-2_materials_card.png" alt="screenshot of electronic properties card" width="250">
+
+        - *Electronic properties* card showing the calculated band structure, density of states, and Brillouin zone.
+        <img src="images/example_3-2_electronic_properties_card.png" alt="screenshot of materials card" width="250">
+
+        - *Workflow Graph* illustrating the various steps, thier inputs, and outputs. 
+        <img src="images/example_3-2_workflow_card.png" alt="screenshot of workflow card" width="250">
+
+    - **FILES** tab:
+
+        This tab shows the uploaded files. NOMAD lists all files in the same directory, as they usually belong together.
+
+        ![screenshot of the files tab](images/example_3-2_files_tab.png)
+
+    - **DATA** tab:
+
+        Also known as the "processed data" tab, this shows the results of the parsing and normalization process done by NOMAD. 
+    
+        NOMAD puts all the data in a unified, hierarchical, and machine-processable format, following the NOMAD metainfo.
+
+        ![Animation of the data tab](images/example_3-2_data_tab.gif)
 
 #### Task 3.3: Uploading experiments data files
 
@@ -270,62 +312,76 @@ NOMAD supports experimental data files in the `.nxs` format.
 
 These files can be uploaded directly to NOMAD, where they are processed, and structured **Entries** are created.
 
-Most scientific instruments generate experimental results in formats other than `.nxs`. NOMAD still supports these files by providing a conversion process using the **NexusDataConverter** built-in schema, which transforms raw data into the `.nxs` format.
-
 ??? task "Uploading experimental data in the `.nxs` format"
+
+    **Uploading the file** 
 
     Start with uploading the file `PBTTT_XPS_SPECS.nxs`. Lets use the drag and drop method as shown in the animation below.
 
     ![An animatation demonstrating the drag-and-drop of NeXuS files in NOMAD](images/example_3-3_drag_drop_files_nexus.gif)
 
-    The file is parsed by NOMAD and an Entry is created. Clicking on right arrow next to an entry navigates you to the respective entry page.
+    After uploading files, processing is automatically triggered. This involves identifying supported file formats in NOMAD and extracting relevant (meta)data. The exact processing steps depend on the use case.
 
-    ![Screenshot of navigating to the Entry page](images/example_3-3_navigating_to_entry.png)
+    Once processing is complete, NOMAD generates an Entry page that presents the data in a structured, hierarchical format based on the NOMAD *metainfo* schema. 
 
+    **Opening and exploring the Entry**
 
-    ??? info "The main elements of the **Entry** page"
-        On the entry page, you will see the detailed informatoin about your entry, divided into 4 main tabs:
+    Click on the <img src="images/go_to_icon.png" alt="Go to arrow Icon" width="15"> icon next to an entry navigates you to the respective entry page.
+
+    Here you can view the metadata and useful visulaization of your data, check the uploaded files, and explore your entry in details. 
+
+    - **OVERVIEW Tab:**
+
+        1- On the left, core metadata are displayed.
+
+        2- On the right, various cards present the available information. 
         
-        - **OVERVIEW Tab:**
-
-            1- On the left, core metadata are displayed.
-
-            2- On the right, various cards present the available information. 
-            
-            The cards you see depend on the properties or data available for that entry.
-            
-            For `.nxs` files, two main cards appear in the overview page: the data viewer and the materials card.
-
-            ![screenshot of the NeXuS entry overview page](images/example_3-3_overview_entry_nexus.png)
-
-        - **FILES Tab:** 
+        The cards you see depend on the properties or data available for that entry.
         
-            This tab shows the uploaded files. NOMAD lists all files in the same directory, as they usually belong together.
+        For `.nxs` files, two main cards appear in the overview page: the data viewer and the materials card.
 
-        - **DATA Tab:**
+        ![screenshot of the NeXuS entry overview page](images/example_3-3_overview_entry_nexus.png)
 
-            Also known as the "processed data" tab, this shows the results of the parsing and normalization process done by NOMAD. 
-            
-            NOMAD puts all the data in a unified, hierarchical, and machine-processable format, following the NOMAD metainfo.
+    - **FILES Tab:** 
+    
+        This tab shows the uploaded files. NOMAD lists all files in the same directory, as they usually belong together.
 
-            ![Animation of the DATA Tab in NeXuS entry page](images/example_3-3_data_tab_entry_page_nexus.gif)
+    - **DATA Tab:**
 
+        Also known as the "processed data" tab, this shows the results of the parsing and normalization process done by NOMAD. 
+        
+        NOMAD puts all the data in a unified, hierarchical, and machine-processable format, following the NOMAD metainfo.
+
+        ![Animation of the DATA Tab in NeXuS entry page](images/example_3-3_data_tab_entry_page_nexus.gif)
+
+
+Most scientific instruments generate experimental results in formats other than `.nxs`. NOMAD still supports these files by providing a conversion process using the **NexusDataConverter** built-in schema, which transforms raw data into the `.nxs` format.
+
+??? info "NexusDataConverter readers and the NeXuS application definitions"
+    **A Reader** is a program designed to interpret and extract data from a specific experimental technique or file format. 
+
+    The reader understands the structure and encoding of the particular data format and provides methods for accessing its contents in a programmatically friendly way.
+    It acts as a bridge between raw experimental data and NOMAD by converting the data into the structured file format according to domain-specific application definitions. 
+
+    A list of available readers can be found [here](https://fairmat-nfdi.github.io/pynxtools/reference/plugins.html)
+
+    **A NeXus application definition** provides a structured specification of the terms and metadata required in an `.nxs` data file for a particular scientific application. These definitions outline the minimum set of terms that must be included in the data file for it to be considered valid according to the NeXus format.
+
+    A list of NeXuS application definitions developed by FAIRmat can be found [here](https://fairmat-nfdi.github.io/nexus_definitions/)
+
+    NexusDataConverter uses **readers** to interpret the raw data files, and then structures them according to the outlines of the **application definitions**
+
+In the following examples, you will learn how to upload a raw file from a SPECS instrument in `.xml` format by using the **NexusDataConverter**. You will do this in two ways:
+
+1. Uploading only the raw file.
+2. Uploading both the raw file and an ELN file, enriching your data with metadata and ensuring compliance with community standards.
 
 ??? task "Uploading experimental data in the `.xml` format"
-
-    XPS measurements made with commercially available instruments are not provided with the `.nxs` format. 
-
-    One the file formats provided natively by these instrument is `.xml`.
-
-    In this exercise, you will learn how to upload a raw file from a SPECS instrument in `.xml` format by using the NexusDataConverter. You will do this in two ways:
-
-    1. Uploading only the raw file.
-    2. Uploading both the raw file and an ELN file, enriching your data with metadata and ensuring compliance with community standards.
 
     **Step 1:** Click on the `CREATE FROM SCHEMA` button in your upload page.
     ![Screenshot of step 1](images/example_3-3_create_from_schema.png)
 
-    **Step 2:** In the *create new entry from schema* window, click on the drop-down menue of the built-in schema, and select `NexusDataConverter`
+    **Step 2:** In the *create new entry from schema* window, click on the drop-down menu of the built-in schema, and select `NexusDataConverter`
 
     **Step 3:** Give a descriptive name for the entry.
 
@@ -336,20 +392,6 @@ Most scientific instruments generate experimental results in formats other than 
     **Step 5:** From the reader drop-down menu, choose the approperiate reader for your files. For this exercise select *xps*.
 
     **Step 6:** From the nxdl drop-down menu, choose the approperiate application definition for your experiment. For this exercise select *NXxps*
-
-    ??? info "NexusDataConverter readers and the NeXuS application definitions"
-        **A Reader** is a program designed to interpret and extract data from a specific experimental technique or file format. 
-
-        The reader understands the structure and encoding of the particular data format and provides methods for accessing its contents in a programmatically friendly way.
-        It acts as a bridge between raw experimental data and NOMAD by converting the data into the structured file format according to domain-specific application definitions. 
-
-        A list of available readers can be found [here](https://fairmat-nfdi.github.io/pynxtools/reference/plugins.html)
-
-        **A NeXus application definition** provides a structured specification of the terms and metadata required in an `.nxs` data file for a particular scientific application. These definitions outline the minimum set of terms that must be included in the data file for it to be considered valid according to the NeXus format.
-
-        A list of NeXuS application definitions developed by FAIRmat can be found [here](https://fairmat-nfdi.github.io/nexus_definitions/)
-
-        NexusDataConverter uses **readers** to interpret the raw data files, and then structures them according to the outlines of the **application definitions**
 
     **Step 7:** Upload the raw data file `PBTTT_XPS_SPECS_raw.xml`.
 
@@ -368,4 +410,49 @@ Most scientific instruments generate experimental results in formats other than 
 
 ??? task "Uploading experimental data in the `.xml` format with additional ELN data"
 
-    TOBECOMPLETED
+    Often, raw files generated by instruments from various vendors lack complete metadata and essential details about the experiment.
+
+    To address this, scientists document all experimental details in an Electronic Lab Notebook (ELN). Combining data from raw files with information from ELNs ensures that experiments are comprehensively described with rich metadata and conform to community standards.
+    
+    NOMAD’s **NexusDataConverter** allows you to merge experimental raw data files with ELN entries in `.yaml` format, producing `.nxs` files that meet community standards and ensure your data are richly-described.
+
+    The ELN `.yaml` file can be generated by various ELN software tools or created manually using a text editor.
+
+    For each supported experimental raw file format, FAIRmat provides a template ELN `.yaml` file containing all necessary attributes and parameters to complement the raw file’s data. These templates can be found [here](https://github.com/FAIRmat-NFDI/pynxtools-xps/tree/a2e9524ae8479ffa9cde79daf2010161d8ae75c3/examples)
+
+    While these files can be edited with any text editor, we recommend using **VS Code** for an optimized editing experience.
+
+    **Open the `eln_data_xml.yaml` file and edit its contents**
+
+    - Modify the start_time and end_time of your experiment. 
+    - Write your information in the `users` section.
+    - Explore the other fields available in the ELN file. 
+    - Save the file.
+    
+    ![Alt text](images/example_3-3_modifying_ELN.gif)
+
+    **Upload your data file `.xml` and your ELN data `.yaml` using NexusDataConverter**
+
+    - **Step 1:** Click on the `CREATE FROM SCHEMA` button in your upload page.
+
+    ![Screenshot of step 1](images/example_3-3_create_from_schema.png)
+
+    - **Step 2:** In the *create new entry from schema* window, click on the drop-down menu of the built-in schema, and select `NexusDataConverter`
+
+    - **Step 3:** Give a descriptive name for the entry.
+
+    - **Step 4:** Click on CREATE. This will take you the NexusDataConverter Entry page.
+
+    ![Screenshot of steps 2 - 4](images/example_3-3_NexusDataConverter.png)
+
+    - **Step 5:** From the reader drop-down menu, choose the approperiate reader for your files. For this exercise select *xps*.
+
+    - **Step 6:** From the nxdl drop-down menu, choose the approperiate application definition for your experiment. For this exercise select *NXxps*
+
+    - **Step 7:** Upload the raw data file `PBTTT_XPS_SPECS_raw.xml` as well as the ELN data file `eln_data_xml.yaml`.
+
+    - **Step 8:** Give a descriptive name for the generated `.nxs` file.
+
+    - **Step 9:** Click on the save icon to start the conversion process. 
+
+    ![Screenshots of steps 5 - 9](images/example_3-3_NexusDataConverter_2(with_ELN).png)
