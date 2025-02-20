@@ -2,7 +2,7 @@
 
 To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language, primarily written in YAML. You custom schema file must have the ending extension `archive.yaml`
 
-??? info "1. NOMAD's archive.yaml files start with the `definitions` keyword and can have a `name` and `description` (Click to expand)"
+??? info "1. NOMAD's archive.yaml files start with the `definitions` keyword, and must have a `name`, and can have a `description`."
     
     NOMAD syntax is:
     ```yaml
@@ -33,8 +33,8 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
     ```
 
 
-??? info "3. Sections can inherit structure and definition from NOMAD's `base_sections` or other sections within the same schema."
-    When inheriting from a NOMAD base section, use the `base_sections` keyword and list the desired base sections you would like to inherit from. This can be given in a python list, or subsequent indented lines starting with a dash, `-`. For inheriting from sections within the same schema, look XYZ example.
+??? info "3. Sections can inherit structure and definition from NOMAD's `base_sections` or other sections."
+    When inheriting from a NOMAD base section, use the `base_sections` keyword and list the desired base sections you would like to inherit from. The keyword `base_sections` additionally allows you to also inherit from other sections (e.g., within the same schema or even a section that have been published in NOMAD, see [schema package references in NOMAD Documentation](https://nomad-lab.eu/prod/v1/docs/howto/customization/basics.html#schema-package-references){:target="_blank"}. Inherited sections can be given in a python list, or subsequent indented lines starting with a dash, `-`.
 
     NOMAD syntax is:
     ```yaml
