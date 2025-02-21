@@ -1,0 +1,98 @@
+definitions:
+  name: Processing of polymers thin-films, given by user (gbu)
+  sections:
+    Experiment_Information_gbu:
+      base_sections: 
+        - nomad.datamodel.data.EntryData
+      quantities:
+        Name_gbu:
+          type: str  
+          default: Experiment title
+          m_annotations:
+            eln:
+              component: StringEditQuantity 
+        Researcher_gbu:
+          type: str
+          default: Name of the researcher who performed the experiment
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Date_gbu:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Additional_Notes_gbu:
+          type: str
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity              
+      sub_sections:
+        Sample_gbu:
+          section:
+            base_sections:
+              - nomad.datamodel.data.EntryData
+              - nomad.datamodel.metainfo.eln.Sample
+            m_annotations:
+              eln:
+                overview: true
+                hide: ['chemical_formula']
+        Solution_gbu:
+          section:
+            base_sections:
+              - nomad.datamodel.data.EntryData
+              - nomad.datamodel.metainfo.eln.Sample
+            m_annotations:
+              eln:
+                overview: true
+                hide: ['chemical_formula', 'description']
+            quantities:
+              Concentration_gbu:
+                type: np.float64
+                unit: mg/ml
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+            sub_sections:
+              Solute:
+                section:
+                  base_sections:
+                    - nomad.datamodel.data.EntryData
+                  quantities:
+                    Substance_gbu:
+                      type: nomad.datamodel.metainfo.eln.ELNSubstance
+                      m_annotations:
+                        eln:
+                          component: ReferenceEditQuantity
+                    Mass_gbu:
+                      type: float
+                      unit: kilogram
+                      m_annotations:
+                        eln:
+                          component: NumberEditQuantity
+                          defaultDisplayUnit: milligram
+              Solvent_gbu:
+                section:
+                  base_sections: 
+                    - nomad.datamodel.data.EntryData
+                  quantities:
+                    substance_gbu:
+                      type: nomad.datamodel.metainfo.eln.ELNSubstance
+                      m_annotations:
+                        eln:
+                          component: ReferenceEditQuantity
+                    Volume_gbu:
+                      type: float
+                      unit: meter ** 3
+                      m_annotations:
+                        eln:
+                          component: NumberEditQuantity
+                          defaultDisplayUnit: milliliter
+        Preparation_gbu:
+          section:
+            base_sections:
+              - nomad.datamodel.data.EntryData
+              - nomad.datamodel.metainfo.eln.Process  
+            m_annotations:
+              eln:
+                overview: true             

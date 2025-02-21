@@ -1,0 +1,154 @@
+definitions:
+  name: Processing and characterization of polymers thin-films, given by user (gbu)
+  sections:
+    Experiment_Information_gbu:
+      base_sections: 
+        - nomad.datamodel.data.EntryData
+      quantities:
+        Name_gbu:
+          type: str  
+          default: Experiment title
+          m_annotations:
+            eln:
+              component: StringEditQuantity 
+        Researcher_gbu:
+          type: str
+          default: Name of the researcher who performed the experiment
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Date_gbu:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Additional_Notes_gbu:
+          type: str
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity              
+      sub_sections:
+        Sample_gbu:
+          section:
+            base_sections:
+              - nomad.datamodel.data.EntryData
+              - nomad.datamodel.metainfo.eln.Sample
+            m_annotations:
+              eln:
+                overview: true
+                hide: ['chemical_formula']
+        Solution_gbu:
+          section:
+            base_sections:
+              - nomad.datamodel.data.EntryData
+              - nomad.datamodel.metainfo.eln.Sample
+            m_annotations:
+              eln:
+                overview: true
+                hide: ['chemical_formula', 'description']
+            quantities:
+              Concentration_gbu:
+                type: np.float64
+                unit: mg/ml
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+            sub_sections:
+              Solute:
+                section:
+                  base_sections:
+                    - nomad.datamodel.data.EntryData
+                  quantities:
+                    Substance_gbu:
+                      type: nomad.datamodel.metainfo.eln.ELNSubstance
+                      m_annotations:
+                        eln:
+                          component: ReferenceEditQuantity
+                    Mass_gbu:
+                      type: float
+                      unit: kilogram
+                      m_annotations:
+                        eln:
+                          component: NumberEditQuantity
+                          defaultDisplayUnit: milligram
+              Solvent_gbu:
+                section:
+                  base_sections: 
+                    - nomad.datamodel.data.EntryData
+                  quantities:
+                    substance_gbu:
+                      type: nomad.datamodel.metainfo.eln.ELNSubstance
+                      m_annotations:
+                        eln:
+                          component: ReferenceEditQuantity
+                    Volume_gbu:
+                      type: float
+                      unit: meter ** 3
+                      m_annotations:
+                        eln:
+                          component: NumberEditQuantity
+                          defaultDisplayUnit: milliliter
+        Preparation_gbu:
+          section:
+            base_sections:
+              - nomad.datamodel.data.EntryData
+              - nomad.datamodel.metainfo.eln.Process  
+            m_annotations:
+              eln:
+                overview: true             
+        Sample_Characterization_gbu:
+          section:
+            m_annotations:
+              eln:
+            sub_sections:
+              Optical_absorption_gbu:
+
+                section:
+                  lable: Optical Absorption (gbu)
+                  base_sections:
+                    - nomad.datamodel.metainfo.basesections.Measurement
+                    - nomad.parsing.tabular.TableData
+                    - nomad.datamodel.metainfo.plot.PlotSection
+                  m_annotations:
+                    eln:
+                      overview: true
+                      hide: ['name', 'lab_id', 'description', 'method', 'location']
+
+                    plotly_graph_object:
+                    - data:
+                          x: "#wavelength" 
+                          y: "#absorbance" 
+                      layout:
+                        title: Optical Spectrum
+                  quantities:
+                    data_file_gbu:
+                      type: str
+                      descritpion:
+                        Upload your .csv data file (gbu)
+                      m_annotations:
+                        tabular_parser:
+                          parsing_options:
+                            comment: '#'
+                            skiprows: [1]
+                          mapping_options:
+                            - mapping_mode: column
+                              file_mode: current_entry
+                              sections:
+                                - '#root'                        
+                        browser:
+                          adaptor: RawFileAdaptor  # Allows to navigate to files in the data browser
+                        eln:
+                          component: FileEditQuantity  # A form field that allows to drop and select files.
+                    wavelength:
+                      type: np.float64
+                      shape: ['*']
+                      m_annotations:
+                        tabular:
+                          name: Wavelength
+                    absorbance:
+                      type: np.float64
+                      shape: ['*']
+                      m_annotations:
+                        tabular:
+                          name: Absorbance
+ 

@@ -1,6 +1,6 @@
 ## Guidelines for Building a Custom ELN Schema
 
-To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language, primarily written in YAML. You custom schema file must have the ending extension `archive.yaml`
+To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language, primarily written in YAML. Your custom **schema file must have the ending extension** `.archive.yaml`
 
 ??? info "1. NOMAD's archive.yaml files start with the `definitions` keyword, and must have a `name`, and can have a `description`."
     
@@ -34,9 +34,10 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
 
 
 ??? info "3. Sections can inherit structure and definition from NOMAD's `base_sections` or other sections."
-    When inheriting from a NOMAD base section, use the `base_sections` keyword and list the desired base sections you would like to inherit from. The keyword `base_sections` additionally allows you to also inherit from other sections (e.g., within the same schema or even a section that have been published in NOMAD, see [schema package references in NOMAD Documentation](https://nomad-lab.eu/prod/v1/docs/howto/customization/basics.html#schema-package-references){:target="_blank"}. Inherited sections can be given in a python list, or subsequent indented lines starting with a dash, `-`.
+    When inheriting from a NOMAD base section, use the `base_sections` keyword and list the desired base sections you would like to inherit from. The keyword `base_sections` additionally allows you to also inherit from other sections (e.g., within the same schema or even a section that have been published in NOMAD, see [schema package references in NOMAD Documentation](https://nomad-lab.eu/prod/v1/docs/howto/customization/basics.html#schema-package-references){:target="_blank"}). Inherited sections can be given in a python list, or subsequent indented lines starting with a dash, `-`.
 
-    NOMAD syntax is:
+    Example:
+
     ```yaml
     definitions:
       name: My NOMAD ELN
@@ -47,9 +48,13 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
           base_sections:
             - nomad.datamodel.data.EntryData
             - nomad.datamodel.metainfo.eln.Sample
+  
+        My_second_section:
+        My_third_section:
     ```
 
     or alternatively in the form of a Python list:
+
     ```yaml
     definitions:
       name: My NOMAD ELN
@@ -58,10 +63,13 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
       sections:
         My_first_section:
           base_sections: ['nomad.datamodel.data.EntryData', 'nomad.datamodel.metainfo.eln.Sample']
+  
+        My_second_section:
+        My_third_section:          
     ``` 
 
-??? info "4. Sections can contain quantities, other sections, and subsections"
-    Each section contains a set of quantites that need to be captured by the ELN. The quantities represent the parameters of your measurement or processing conditions. In addition, sections can also **include** subsections. 
+??? info "4. Each section can contain quantities, other sections, and subsections."
+    Each section can contain a set of quantites that need to be captured by the ELN. The quantities represent the parameters of your measurement or processing conditions. In addition, sections **can also contain** subsections. When including subsections, you need to tell NOMAD the subsections you included are themselves a section. How? By including the keyword `sections:` in the next indented line (see bottom example).
 
     NOMAD syntax is:
 
@@ -78,6 +86,11 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
           quantities:
 
           sub_sections:
+            My_first_subsection:
+              sections:
+            My_second_subsection:
+              sections:      
+        My_second_section:
     ```
 
 
@@ -100,28 +113,48 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
               - shape: #For example scalar or list (['*'])
               - unit: #For example, meters, amperes, or seconds
           sub_sections:
+            My_first_subsection:
+              sections:
+            My_second_subsection:
+              sections:
+            My_third_subsection:
+              sections:
+
+        My_second_section:
+        My_third_section:          
     ```
 
 ??? info "6. Section and quantities can have annotations"
-Annotations provide additional information that NOMAD can use to alter its behavior around these definitions and how users can interact with them. The keyword for annotations is `m_annotations`.
-```yaml
-definitions:
-  name: My NOMAD ELN
-  description: This is an electronic lab notebook schema that includes several sections.
+    Annotations provide additional information that NOMAD can use to alter its behavior around these definitions and how users can interact with them. The keyword for annotations is `m_annotations`.
 
-  sections:
-    My_first_section:
-      base_sections:
-        - nomad.datamodel.data.EntryData
-        - nomad.datamodel.metainfo.eln.Sample
-      quantities:
-        first_quantity:
-          - type: #For example, str or np.float64
-          - shape: #For example scalar or list (['*'])
-          - unit: #For example, meters, amperes, or seconds
-          m_annotations:
-            annotation_name:
-              key1: value1  
-      sub_sections:
-```
+    ```yaml
+    definitions:
+      name: My NOMAD ELN
+      description: This is an electronic lab notebook schema that includes several sections.
+      
+      sections:
+        My_first_section:
+          base_sections:
+            - nomad.datamodel.data.EntryData
+            - nomad.datamodel.metainfo.eln.Sample
+          quantities:
+            first_quantity:
+              - type: #For example, str or np.float64
+              - shape: #For example scalar or list (['*'])
+              - unit: #For example, meters, amperes, or seconds
+              m_annotations:
+                annotation_name:
+                  key1: value1  
+              sub_sections:
+                My_first_subsection:
+                  sections:
+                My_second_subsection:
+                  sections:
+                My_third_subsection:
+                  sections:
 
+        My_second_section:
+        My_third_section:    
+    ```
+
+Now let's inspect a simple custom schema for  Polymer Processing together. You can download the **polymer_processing_schema.archive.yaml** file from here
