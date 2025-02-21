@@ -94,8 +94,8 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
     ```
 
 
-??? info "5. Quantities are defined with type, shape and unit properties"
-    Quantities define possible primitive values. The first line in the quantity definition includes a user-defined name for the quantitiy. The basic properties that go into a quantity definition are `type`, `shape`, and `unit`.
+??? info "5. Quantities can be defined with type, shape, unit and other properties"
+    Quantities define possible primitive values. The basic properties that can go into a quantity definition are `type`, `shape`, and `unit`.
 
     ```yaml
     definitions:
@@ -157,4 +157,67 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
         My_third_section:    
     ```
 
-Now let's inspect a simple custom schema for  Polymer Processing together. You can download the **polymer_processing_schema.archive.yaml** file from here
+Now let's inspect a simple custom schema for Polymer Processing together. You can find the **polymer_processing_schema.archive.yaml** file in [tutorial_16_materials/part_4_files](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials){:target="_blank"} or download it [here](https://github.com/siamakn/temp_tutorial_16/blob/main/tutorial_16_materials/part_4_files/polymer_processing_schema.archive.yaml){:target="_blank"}.
+
+??? example "Example: Inspecting a custom schema for polymer processing"
+    Now let's inspect a simple custom schema for Polymer Processing together. You can find the **polymer_processing_schema.archive.yaml** file in [tutorial_16_materials/part_4_files](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials){:target="_blank"} or download it [here](https://github.com/siamakn/temp_tutorial_16/blob/main/tutorial_16_materials/part_4_files/polymer_processing_schema.archive.yaml){:target="_blank"}. In order to see how it looks like in the NOMAD GUI, make a new upload, and drag and drop the *polymer_processing_schema.archive.yaml** file, so that NOMAD can process it. Then create a new entry, based on this schema (scrreenshots). 
+    <div style="text-align: center;">
+        <img src="images/upload_custom_schema_0_1_2_3.png" alt="upload custom schema create entry" width="800">
+    </div>    
+    <div style="text-align: center;">
+        <img src="images/upload_custom_schema_4_5_6.png" alt="upload custom schema create entry" width="800">
+    </div>       
+    <div style="text-align: center;">
+        <img src="images/upload_custom_schema_7.png" alt="upload custom schema create entry" width="800">
+    </div>     
+
+    After this, you will be able to see the custom ELN, opened in the DATA tab. You can take some moment and inspect different tabs, e.g., **OVERVIEW** tab and **DATA** tab, the quantities and the subsections we have here.
+    <div style="text-align: center;">
+        <img src="images/polymer_processing_custom_eln.png" alt="custom polymer processing ELN entry" width="800">
+    </div>    
+
+    Following we have a custom schema .archive.yaml file that was prepared for preparing a polymer solution, from a polymer powder, and a solvent. To better distinguish between the NOMAD syntax and user given parameters, I use the abbreciation **gbu** which stands for **given by the user**. The screenshots below are show the file using an IDE (here vscode) which helps with visualizing indentations and allows for folding yaml contents.
+
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_1.png" alt="create built-in schema" width="800">
+    </div>
+
+    Here we started with `definitions:`, we have a `name:`, and don't have a `description` (guideline 1). A schema is a section itself, therefore having the keyword `sections:` (guideline 4).
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_2.png" alt="create built-in schema" width="800">
+    </div>
+    This schema has only one section: `Experiment_Information_gbu` (guideline 2).
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_3.png" alt="create built-in schema" width="800">
+    </div>
+    The `Experiment_Information_gbu` section inherits properties from some other sections that should be listed in `base_sections` (guideline 3), and contains quantities (keyword `quantities:`) and subsections (keyword `subsections:`) (guideline 4).
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_4.png" alt="create built-in schema" width="800">
+    </div>
+    The 'Experiment_Information_gbu' inherits from the NOMAD base section `nomad.datamodel.data.EntryData` (guideline 3). In order to have data becomming an entry in NOMAD, at least the `nomad.datamodel.data.EntryData` or other base sections that inherit from this base section should be given here.
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_5.png" alt="create built-in schema" width="800">
+    </div>
+    We defined four quantities for the `Experiment_Information_gbu` section: `Name_gbu`, `Researcher_gbu`, `Date_gbu`, and 'Additional_Notes_gbu' (guideline 4). We chose these names (given by the user or gbu); They are not NOMAD syntax.
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_6.png" alt="create built-in schema" width="800">
+    </div>
+    each of these quantities are defined with type (guideline 5), and have annotations (keyword: `m_annotations`, guideline 6).
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_7.png" alt="create built-in schema" width="800">
+    </div>
+    Let's inspect one of these quantities together, e.g., `Name_gbu:`. Look at the NOMAD syntax and try too read it like this: "I want a field to add a name for my experiment, it should be a piece of small text. I name this quantity something descriptive, e.g., `Name_gbu`, it should a text, so it will be of type `str`. Although optional, I want it to have some default value, e.g., to guide the user what it, or what it should be filled most often, so I define its default value in the next line `default: Experiment title`. I want it to be editable in the GUI. Therefore, I should define it further by annotations. Which annotation? I now now it is related to ELNs, and it is going to be an editable string quantity, so with some intuition and refering to NOMAD documentation and checking other schemas, I write, and care for the indentations.
+
+    ```yaml
+            Name_gbu:
+          type: str  
+          default: Experiment title
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+    ```
+    Now let's inspect what subsections does my `Experiment_Information_gbu` have.
+    <div style="text-align: center;">
+        <img src="images/inspect_polymer_processing_schema_8.png" alt="create built-in schema" width="800">
+    </div>
+    The `Experiment_Information_gbu` has 3 subsections, each of the 3 being a section itself (guideline 4), and therefore all the guidelines 2-6 apply to each of the 3 subsections, individually.
