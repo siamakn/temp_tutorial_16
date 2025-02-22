@@ -157,7 +157,7 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
         My_third_section:    
     ```
 
-Now let's inspect a simple custom schema for Polymer Processing together. You can find the **polymer_processing_schema.archive.yaml** file in [tutorial_16_materials/part_4_files](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials){:target="_blank"} or download it [here](https://github.com/siamakn/temp_tutorial_16/blob/main/tutorial_16_materials/part_4_files/polymer_processing_schema.archive.yaml){:target="_blank"}.
+Now let's inspect a simple custom schema for Polymer Processing together.
 
 ??? example "Example: Inspecting a custom schema for polymer processing"
     Now let's inspect a simple custom schema for Polymer Processing together. You can find the **polymer_processing_schema.archive.yaml** file in [tutorial_16_materials/part_4_files](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials){:target="_blank"} or download it [here](https://github.com/siamakn/temp_tutorial_16/blob/main/tutorial_16_materials/part_4_files/polymer_processing_schema.archive.yaml){:target="_blank"}. In order to see how it looks like in the NOMAD GUI, make a new upload, and drag and drop the *polymer_processing_schema.archive.yaml** file, so that NOMAD can process it. Then create a new entry, based on this schema (scrreenshots). 
@@ -176,7 +176,7 @@ Now let's inspect a simple custom schema for Polymer Processing together. You ca
         <img src="images/polymer_processing_custom_eln.png" alt="custom polymer processing ELN entry" width="800">
     </div>    
 
-    Following we have a custom schema .archive.yaml file that was prepared for preparing a polymer solution, from a polymer powder, and a solvent. To better distinguish between the NOMAD syntax and user given parameters, I use the abbreciation **gbu** which stands for **given by the user**. The screenshots below are show the file using an IDE (here vscode) which helps with visualizing indentations and allows for folding yaml contents.
+    Following we will inspect this custom schema .archive.yaml file that was prepared for preparing a polymer solution, from a polymer powder, and a solvent. To better distinguish between the NOMAD syntax and user given parameters, I use the abbreciation **gbu** which stands for **given by the user**. The screenshots below are show the file using an IDE (here vscode) which helps with visualizing indentations and allows for folding yaml contents.
 
     <div style="text-align: center;">
         <img src="images/inspect_polymer_processing_schema_1.png" alt="create built-in schema" width="800">
