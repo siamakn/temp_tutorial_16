@@ -221,3 +221,5 @@ Now let's inspect a simple custom schema for Polymer Processing together.
         <img src="images/inspect_polymer_processing_schema_8.png" alt="create built-in schema" width="800">
     </div>
     The `Experiment_Information_gbu` has 3 subsections, each of the 3 being a section itself (guideline 4), and therefore all the guidelines 2-6 apply to each of the 3 subsections, individually.
+
+

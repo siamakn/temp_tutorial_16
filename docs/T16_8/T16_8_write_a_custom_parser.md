@@ -23,8 +23,8 @@ Let's start by creating a new schema file with the `.archive.yaml` format, and c
 
 ```yaml
 definitions:
-    name: This is a parser for optical absorption data in the .csv format
-    sections:
+  name: This is a parser for optical absorption data in the .csv format
+  sections:
     Optical_absorption:
 ```
 
@@ -40,9 +40,9 @@ remember, the NOMAD syntax to include sections to inherit from, was `base_sectio
 
 ```yaml
 base_sections:
-    - nomad.datamodel.data.EntryData
-    - nomad.parsing.tabular.TableData
-    - nomad.datamodel.metainfo.plot.PlotSection
+  - nomad.datamodel.data.EntryData
+  - nomad.parsing.tabular.TableData
+  - nomad.datamodel.metainfo.plot.PlotSection
 ```
 
 ### **Step 3: Defining the Quantities of Our Schema**
@@ -57,12 +57,12 @@ and give them a proper type and shape attribute.
 
 ```yaml
 quantities:
-    data_file:
+  data_file:
     type: str
-    wavelength:
+  wavelength:
     type: np.float64
     shape: ['*']
-    absorbance:
+  absorbance:
     type: np.float64
     shape: ['*']
 ```
@@ -77,43 +77,43 @@ The first is to instruct NOMAD to allow for droping and selecting files in this 
 
 ```yaml
 eln:
-    component: FileEditQuantity
+  component: FileEditQuantity
 ```
 The second is to instruct NOMAD to open the operating system's data browser to select files:
 
 ```yaml
 browser:
-    adaptor: RawFileAdaptor
+  adaptor: RawFileAdaptor
 ```
 The third one instructs NOMAD to apply the tabular parser to extract the data from the uploaded file:
 ```yaml
 tabular_parser:
-    parsing_options:
+  parsing_options:
     comment: '#'
     skiprows: [1]
-    mapping_options:
+  mapping_options:
     - mapping_mode: column
-        file_mode: current_entry
-        sections:
+      file_mode: current_entry
+      sections:
         - '#root'
 ```
 So we will annotate the `data_file` as following:
 
 ```yaml
 m_annotations:
-    eln:
+  eln:
     component: FileEditQuantity
-    browser:
+  browser:
     adaptor: RawFileAdaptor
-    tabular_parser:
+  tabular_parser:
     parsing_options:
-        comment: '#'
-        skiprows: [1]
+      comment: '#'
+      skiprows: [1]
     mapping_options:
-        - mapping_mode: column
+      - mapping_mode: column
         file_mode: current_entry
         sections:
-            - '#root'  
+          - '#root'  
 ```
 
 
@@ -121,7 +121,7 @@ m_annotations:
 This quantitiy will accept values, that will be extracted by the tabular parser. Therefore the annotation will be:
 ```yaml
 m_annotations:
-    tabular:
+  tabular:
     name: Wavelength
 ```
 Note that the value for the `name` key **must** be exactly written as the **header of the column that we want to capture its values** and put in the Wavelength quantity we defined.
@@ -129,7 +129,7 @@ Note that the value for the `name` key **must** be exactly written as the **head
 * **The `absorbance` quantity:**  
 ```yaml
 m_annotations:
-    tabular:
+  tabular:
     name: Absorbance
 ```
 
@@ -140,14 +140,14 @@ By using the `plotly_graph_object` annotation we instruct NOMAD which quanty to 
 
 ```yaml
 m_annotations:
-    plotly_graph_object:
+  plotly_graph_object:
     data:
-        x: "#wavelength"
-        y: "#absorbance"
+      x: "#wavelength"
+      y: "#absorbance"
     layout:
-        title: Optical Spectrum
+      title: Optical Spectrum
 ```
-Note that here, the graph object belongs to the `Optical_absorption` section definition. Therefore, the `m_annotations:` must be at the same hierarchy level as `quantities`, and `base_sections`.
+Note that here, the graph object belongs to the `Optical_absorption` section definition. Therefore, the `m_annotations:` **must be at the same hierarchy level as `quantities`, and `base_sections`**.
 
 ### **Step 6 (optional): Adding a Free Text Field**
 
@@ -158,67 +158,259 @@ For example:
 
 ```yaml
 info_about_data:
-    type: str
-    m_annotations:
+  type: str
+  m_annotations:
     eln:
-        component: RichTextEditQuantity
+      component: RichTextEditQuantity
 ```
 
 Finally our custom schema file should look like the following. You can also find the **optical_absorptoion_plot_schema.archive.yaml** file in [tutorial_16_materials/part_4_files](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials){:target="_blank"} or download it [here](https://github.com/siamakn/temp_tutorial_16/blob/main/tutorial_16_materials/part_4_files/optical_absorption_plot.archive.yaml){:target="_blank"}.
 
 ```yaml
 definitions:
-    name: This is a parser for optical absorption data in the .csv format
-    sections:
+  name: This is a parser for optical absorption data in the .csv format
+  sections:
     Optical_absorption:
-        base_sections:
+      base_sections:
         - nomad.datamodel.data.EntryData
         - nomad.parsing.tabular.TableData
         - nomad.datamodel.metainfo.plot.PlotSection
-        quantities:
+      quantities:
         info_about_data:
-            type: str
-            m_annotations:
+          type: str
+          m_annotations:
             eln:
-                component: RichTextEditQuantity          
+              component: RichTextEditQuantity          
         data_file:
-            type: str
-            m_annotations:
+          type: str
+          m_annotations:
             eln:
-                component: FileEditQuantity
+              component: FileEditQuantity
             browser:
-                adaptor: RawFileAdaptor
+              adaptor: RawFileAdaptor
             tabular_parser:
-                parsing_options:
+              parsing_options:
                 comment: '#'
                 skiprows: [1]
-                mapping_options:
+              mapping_options:
                 - mapping_mode: column
-                    file_mode: current_entry
-                    sections:
+                  file_mode: current_entry
+                  sections:
                     - '#root'
         wavelength:
-            type: np.float64
-            shape: ['*']
-            m_annotations:
+          type: np.float64
+          shape: ['*']
+          m_annotations:
             tabular:
-                name: Wavelength
+              name: Wavelength
         absorbance:
-            type: np.float64
-            shape: ['*']
-            m_annotations:
+          type: np.float64
+          shape: ['*']
+          m_annotations:
             tabular:
-                name: Absorbance
-        m_annotations:
+              name: Absorbance
+      m_annotations:
         plotly_graph_object:
-            data:
+          data:
             x: "#wavelength"
             y: "#absorbance"
-            layout:
-            title: Optical Spectrum
+        layout:
+          title: Optical Spectrum
 ```
 
 ### **Step 7: Uploading the Schema File to NOMAD and Creating an Entry**
 
 Now that we have created the ELN schema file for parsing the optical absorption data file, let's put it to the test in the NOMAD GUI.
 
+??? example "Example: Adding Plot to the Polymer Processing custom schema (Steps)"
+
+    Now, let's enhance our Polymer Processing schema.  
+    We already had this custom schema file:
+
+    ```yaml
+    definitions:
+      name: Processing and characterization of polymers thin-films, given by user (gbu)
+      sections:
+        Experiment_Information_gbu:
+          base_sections: 
+            - nomad.datamodel.data.EntryData
+          quantities:
+            Name_gbu:
+              type: str  
+              default: Experiment title
+              m_annotations:
+                eln:
+                  component: StringEditQuantity 
+            Researcher_gbu:
+              type: str
+              default: Name of the researcher who performed the experiment
+              m_annotations:
+                eln:
+                  component: StringEditQuantity
+            Date_gbu:
+              type: Datetime
+              m_annotations:
+                eln:
+                  component: DateTimeEditQuantity
+            Additional_Notes_gbu:
+              type: str
+              m_annotations:
+                eln:
+                  component: RichTextEditQuantity
+          sub_sections:
+            Sample_gbu:
+              section:
+                base_sections:
+                  - nomad.datamodel.data.EntryData
+                  - nomad.datamodel.metainfo.eln.Sample
+                m_annotations:
+                  eln:
+                    overview: true
+                    hide: ['chemical_formula']
+            Solution_gbu:
+              section:
+                base_sections:
+                  - nomad.datamodel.data.EntryData
+                  - nomad.datamodel.metainfo.eln.Sample
+                m_annotations:
+                  eln:
+                    overview: true
+                    hide: ['chemical_formula', 'description']
+                quantities:
+                  Concentration_gbu:
+                    type: np.float64
+                    unit: mg/ml
+                    m_annotations:
+                      eln:
+                        component: NumberEditQuantity
+                sub_sections:
+                  Solute:
+                    section:
+                      base_sections:
+                        - nomad.datamodel.data.EntryData
+                      quantities:
+                        Substance_gbu:
+                          type: nomad.datamodel.metainfo.eln.ELNSubstance
+                          m_annotations:
+                            eln:
+                              component: ReferenceEditQuantity
+                        Mass_gbu:
+                          type: float
+                          unit: kilogram
+                          m_annotations:
+                            eln:
+                              component: NumberEditQuantity
+                              defaultDisplayUnit: milligram
+                  Solvent_gbu:
+                    section:
+                      base_sections: 
+                        - nomad.datamodel.data.EntryData
+                      quantities:
+                        substance_gbu:
+                          type: nomad.datamodel.metainfo.eln.ELNSubstance
+                          m_annotations:
+                            eln:
+                              component: ReferenceEditQuantity
+                        Volume_gbu:
+                          type: float
+                          unit: meter ** 3
+                          m_annotations:
+                            eln:
+                              component: NumberEditQuantity
+                              defaultDisplayUnit: milliliter
+            Preparation_gbu:
+              section:
+                base_sections:
+                  - nomad.datamodel.data.EntryData
+                  - nomad.datamodel.metainfo.eln.Process  
+                m_annotations:
+                  eln:
+                    overview: true
+    ```
+
+    
+     At the same level of the subsections ´Sample_gbu´, `Solution_gbu`, and  `Preparation_gbu`, we add a new section and name it `Sample_Characterization_gbu`, and tell NOMAD it is an eln using annotations:
+
+       ```yaml
+       Sample_Characterization_gbu:
+         section:
+           m_annotations:
+             eln:
+       ```
+
+    **(Almost) similar to Step 1: We start with the Optical_absorption section.**  
+       Here, to generalize our schema, we assume we want to characterize our samples with several techniques, e.g., electrical conductivity and optical absorption. Therefore, we introduce subsections to our `Sample_Characterization_gbu` (i.e. a placeholder for other characterization data) and introduce our Optical_absorption_gbu as a subsection:
+       ```yaml
+       subsections:
+         Optical_absorption_gbu:
+           section:
+       ```  
+
+    **Similar to Step 2, we add base sections**  
+       - Remember we always need to add the basesections `nomad.parsing.tabular.TableData` and `nomad.datamodel.metainfo.plot.PlotSection` to be able to parse the data, and plot them, respectively. However, this time, we benefit from a *more specialized* NOMAD base section, `nomad.datamodel.metainfo.basesections.Measurement`, that gives us more functionalities than just making an entry. Using the `nomad.datamodel.data.EntryData` is not needed anymore, because it is already inherited in `nomad.datamodel.metainfo.basesections.Measurement`. So we add:
+       ```yaml
+       base_sections:
+         - nomad.datamodel.metainfo.basesections.Measurement
+         - nomad.parsing.tabular.TableData
+         - nomad.datamodel.metainfo.plot.PlotSection
+       ```  
+       - Tip (optional): we can choose a lable for eln sections using the following syntax:
+       ```yaml
+       lable: Optical Absorption
+       ```   
+    **Similar to Step 3, we define our 3 desired quantities, and give their type and shape values**
+    ```yaml
+    quantities:
+      data_file_gbu:
+        type: str
+      wavelength:
+        type: np.float64
+        shape: ['*']
+      absorbance:
+        type: np.float64
+        shape: ['*']
+    ```
+    **Similar to Step 4, we instruct NOMAD how to treat each of these quantities, using annotations**   
+
+    For `data_file_gbu`:
+    ```yaml
+    m_annotations:
+      eln:
+        component: FileEditQuantity
+      browser:
+        adaptor: RawFileAdaptor
+      tabular_parser:
+        parsing_options:
+          comment: '#'
+          skiprows: [1]
+        mapping_options:
+          - mapping_mode: column
+            file_mode: current_entry
+            sections:
+              - '#root'  
+    ```
+    For wavelength and absorbance quantities:
+    ```yaml
+    m_annotations:
+      tabular:
+        name: Wavelength
+    ```
+    and
+    ```yaml
+    m_annotations:
+      tabular:
+        name: Absorbance
+    ```
+    **Similar to Step 5, we creating a plot for our data.**
+
+    We again note that here, the graph object belongs to the `Optical_absorption_gbu` section definition. Therefore, the `m_annotations:` **must be at the same hierarchy level as `quantities`, and `base_sections`** of this section.
+    ```yaml
+    m_annotations:
+      plotly_graph_object:
+        data:
+          x: "#wavelength"
+          y: "#absorbance"
+        layout:
+          title: Optical Spectrum
+    ```
+    Finally our custom schema file should look like the following. You can also find the **polymwe_processinf_and_optical_absorptoion_plot_schema.archive.yaml** file in [tutorial_16_materials/part_4_files](https://github.com/siamakn/temp_tutorial_16/tree/main/tutorial_16_materials){:target="_blank"} or download it [here](https://github.com/siamakn/temp_tutorial_16/blob/main/tutorial_16_materials/part_4_files/polymer_processing_and_optical_absorption_plot.archive.yaml){:target="_blank"}.
