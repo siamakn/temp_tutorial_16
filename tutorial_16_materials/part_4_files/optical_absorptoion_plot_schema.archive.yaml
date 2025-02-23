@@ -1,0 +1,49 @@
+definitions:
+  name: This is a parser for optical absorption data in the .csv format
+  sections:
+    Optical_absorption:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+        - nomad.parsing.tabular.TableData
+        - nomad.datamodel.metainfo.plot.PlotSection
+      quantities:
+        info_about_data:
+          type: str
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity          
+        data_file:
+          type: str
+          m_annotations:
+            eln:
+              component: FileEditQuantity
+            browser:
+              adaptor: RawFileAdaptor
+            tabular_parser:
+              parsing_options:
+                comment: '#'
+                skiprows: [1]
+              mapping_options:
+                - mapping_mode: column
+                  file_mode: current_entry
+                  sections:
+                    - '#root'
+        wavelength:
+          type: np.float64
+          shape: ['*']
+          m_annotations:
+            tabular:
+              name: Wavelength
+        absorbance:
+          type: np.float64
+          shape: ['*']
+          m_annotations:
+            tabular:
+              name: Absorbance
+      m_annotations:
+        plotly_graph_object:
+          data:
+            x: "#wavelength"
+            y: "#absorbance"
+          layout:
+            title: Optical Spectrum
