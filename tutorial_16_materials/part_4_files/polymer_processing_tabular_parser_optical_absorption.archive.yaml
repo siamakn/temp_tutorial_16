@@ -26,7 +26,7 @@ definitions:
           type: str
           m_annotations:
             eln:
-              component: RichTextEditQuantity              
+              component: RichTextEditQuantity
       sub_sections:
         Sample_gbu:
           section:
@@ -95,59 +95,52 @@ definitions:
               - nomad.datamodel.metainfo.eln.Process  
             m_annotations:
               eln:
-                overview: true             
-        Sample_Characterization_gbu:
+                overview: true
+        Optical_absorption:
           section:
+            base_sections:
+              - nomad.datamodel.metainfo.basesections.Measurement
+              - nomad.parsing.tabular.TableData
+              - nomad.datamodel.metainfo.plot.PlotSection
+            quantities:
+              info_about_data:
+                type: str
+                m_annotations:
+                  eln:
+                    component: RichTextEditQuantity          
+              data_file:
+                type: str
+                m_annotations:
+                  eln:
+                    component: FileEditQuantity
+                  browser:
+                    adaptor: RawFileAdaptor
+                  tabular_parser:
+                    parsing_options:
+                      comment: '#'
+                      skiprows: [1]
+                    mapping_options:
+                      - mapping_mode: column
+                        file_mode: current_entry
+                        sections:
+                          - '#root'
+              wavelength:
+                type: np.float64
+                unit: nm
+                shape: ['*']
+                m_annotations:
+                  tabular:
+                    name: Wavelength
+              absorbance:
+                type: np.float64
+                shape: ['*']
+                m_annotations:
+                  tabular:
+                    name: Absorbance
             m_annotations:
-              eln:
-            sub_sections:
-              Optical_absorption_gbu:
-                section:
-                  lable: Optical Absorption (gbu)
-                  base_sections:
-                    - nomad.datamodel.metainfo.basesections.Measurement
-                    - nomad.parsing.tabular.TableData
-                    - nomad.datamodel.metainfo.plot.PlotSection
-                  m_annotations:
-                    eln:
-                      overview: true
-                      hide: ['name', 'lab_id', 'description', 'method', 'location']
-
-                    plotly_graph_object:
-                    - data:
-                          x: "#wavelength" 
-                          y: "#absorbance" 
-                      layout:
-                        title: Optical Spectrum
-                  quantities:
-                    data_file_gbu:
-                      type: str
-                      descritpion:
-                        Upload your .csv data file (gbu)
-                      m_annotations:
-                        tabular_parser:
-                          parsing_options:
-                            comment: '#'
-                            skiprows: [1]
-                          mapping_options:
-                            - mapping_mode: column
-                              file_mode: current_entry
-                              sections:
-                                - '#root'                        
-                        browser:
-                          adaptor: RawFileAdaptor  # Allows to navigate to files in the data browser
-                        eln:
-                          component: FileEditQuantity  # A form field that allows to drop and select files.
-                    wavelength:
-                      type: np.float64
-                      shape: ['*']
-                      m_annotations:
-                        tabular:
-                          name: Wavelength
-                    absorbance:
-                      type: np.float64
-                      shape: ['*']
-                      m_annotations:
-                        tabular:
-                          name: Absorbance
- 
+              plotly_graph_object:
+                data:
+                  x: "#wavelength"
+                  y: "#absorbance"
+              layout:
+                title: Optical Spectrum        

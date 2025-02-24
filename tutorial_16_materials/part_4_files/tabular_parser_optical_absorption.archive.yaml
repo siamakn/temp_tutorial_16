@@ -7,11 +7,11 @@ definitions:
         - nomad.parsing.tabular.TableData
         - nomad.datamodel.metainfo.plot.PlotSection
       quantities:
-        info_about_data:
+        rich_text:
           type: str
           m_annotations:
             eln:
-              component: RichTextEditQuantity          
+              component: RichTextEditQuantity      
         data_file:
           type: str
           m_annotations:
@@ -27,13 +27,14 @@ definitions:
                 - mapping_mode: column
                   file_mode: current_entry
                   sections:
-                    - '#root'
+                    - '#root'          
         wavelength:
           type: np.float64
+          unit: nm
           shape: ['*']
           m_annotations:
             tabular:
-              name: Wavelength
+              name: Wavelength          
         absorbance:
           type: np.float64
           shape: ['*']
@@ -46,4 +47,4 @@ definitions:
             x: "#wavelength"
             y: "#absorbance"
           layout:
-            title: Optical Spectrum
+            title: Optical Spectrum                      
