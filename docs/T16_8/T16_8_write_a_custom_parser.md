@@ -341,7 +341,7 @@ Now that we have created the ELN schema file for parsing the optical absorption 
     **(Almost) similar to Step 1: We start with the Optical_absorption section.**  
        Here, to generalize our schema, we assume we want to characterize our samples with several techniques, e.g., electrical conductivity and optical absorption. Therefore, we introduce subsections to our `Sample_Characterization_gbu` (i.e. a placeholder for other characterization data) and introduce our Optical_absorption_gbu as a subsection:
        ```yaml
-       subsections:
+       sub_sections:
          Optical_absorption_gbu:
            section:
        ```  
