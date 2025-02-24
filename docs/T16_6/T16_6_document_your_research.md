@@ -120,7 +120,7 @@ Now, let's create an entry using the built-in *Generic Sample ELN* schema for **
 
     > **Tip:** Follow the [steps for creating an entry](#create-an-entry-using-nomads-built-in-schema).
 
-### Create and instrument entry
+### Create an instrument entry
 
 Now, let's create an entry using the built-in *Instrument ELN* schema for **UV Ozone Cleaner**. Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Instrument ELN* in step 3.
 
@@ -308,9 +308,9 @@ Once all substances, samples, processes, and measurements are defined, you can i
 ??? example "Download the example file for this excercise"
     We have prepared a compressed file for this task that can be downloaded from this [link](link)
     
-    The file contains a NOMAD ELN upload with several entries using NOMAD built-in base sections. 
+    The file contains several NOMAD ELN entries in `.json` format.
     
-    It was created using the NOMAD graphical user interface, organized into folders, and categorized with custom tags.
+    These entries were created using the NOMAD ELN built-schema, organized into folders, and categorized with custom tags.
     
     You can drag-and-drop this file into a new upload in NOMAD to view its contents.
 
@@ -343,12 +343,55 @@ Imagine you've created multiple entries of substances, samples, instruments, pro
         <img src="images/organization/after_organization.png" alt="interactive workflow gif" width="400">
     </div>  
 
+**Searching your ELN**
+
+To search for entries in your ELN, follow these steps:
+
+1. on the top of the ELN upload page, click on the <img src="images/organization/icon_search_upload.png" alt="Search ELN icon" width="15"> icon at the top of the page.
+![screenshot of step 1](images/organization/explore_ELN_step_1.png)
+
+2. From the drop-down menu, select ENTRIES.
+![Screenshot of step 2](images/organization/explore_ELN_step_2.png)
+
+This will open the NOMAD EXPLORE page with a filter applied to display only the entries from your upload.  
+
+![screenshot of NOMAD EXPLORE page wiht the filter applied](images/organization/explore_ELN_step_2r.png)
+
 ??? info "Searching and filtering entries in NOMAD"
     NOMAD provides two ways to filter and find your ELN entries efficiently: 
 
-    - Filter by built-in basesections used to narrow down your search.
+    - Filter by built-in schema used to narrow down your search.
     - Filter by custom tags, where you assign common tags to related entries for easy grouping.
-    For example, tag all solvents as "my_solvent" or all your samples as "my_samples"
+    For example, tag all solvents as "my_solvent" or all samples as "my_samples"
 
     Using these filters helps you quickly locate specific entries in your ELN.
 
+**Customize your search interface with widgets**
+
+Widgets allow you to tailor your search interface to better suit data exploration needs. By adding and rearranging widgets, you can create a personalized view that highlights the most relevant filters, metadata, or visualizations for your research.
+
+??? task "Create a widget for ELN sections and custom tags"
+    To create a widget to filter your ELN follow the following steps:
+    
+    1. Click on the `+ TERMS` button, to open the *Edit terms widget* menu. 
+    ![screenshot of step 1](images/organization/widget_step_1.png)
+
+    2. Start by typing "eln" in the Search quantity field. A list of possible filters will appear.
+
+    3. Select `results.eln.sections` from the menu. This will display a filter based on the types of ELN built-in templates available in your ELN.
+    ![screenshot of steps 2 and 3](images/organization/widget_step_2_3.png) 
+
+    4. Write a descriptive title for the widget in Title field.
+    5. Click DONE!
+    ![screenshot of steps 4 and 5](images/organization/widget_step_4_5.png)
+
+    The new ELN sections widget will now appear at the top of your EXPLORE page, displaying ELN entry types along with their corresponding counts.
+    ![screenshot of the widget](images/organization/widget_step_5r.png)
+
+    You can now follow the same steps to create a widget for filtering by custom tags.
+
+    In Step 3, instead of selecting results.eln.sections, choose results.eln.tags. This will create a widget that filters your ELN entries based on the custom tags you have assigned.
+
+    This widget will then appear on your EXPLORE page, allowing you to quickly view and filter entries by their associated tags.
+
+    ![animation of filtering using widgets](images/organization/explore_you_ELN_entries.gif)
