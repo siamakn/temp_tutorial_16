@@ -183,7 +183,7 @@ Files can be added to an upload individually, or you can group them into a compr
 #### Task 3.1: Uploading miscellaneous files
 
 ??? example "Download the example files for this excercise"
-    We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/d/92b34ea0e8604e64a079/). [link2](../../tutorial_16_materials/part_3_files/example_files_upload/miscellaneous_data/miscellaneous_data.zip). 
+    We have prepared a set of files for this task that can be downloaded from this [link](https://github.com/siamakn/temp_tutorial_16/raw/refs/heads/main/tutorial_16_materials/part_2_files/example_files_upload/miscellaneous_data/miscellaneous_data.zip).
     
     Download the folder, then uncompress it on your local machine at you preferred directory.
 
@@ -225,7 +225,7 @@ You can add these files to your NOMAD upload. Do so by simply drag and drop the 
 #### Task 3.2: Uploading computations data files
 
 ??? example "Download the example files for this excercise"
-    We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/f/f6b51d915fc0435ba9bb/?dl=1). 
+    We have prepared a set of files for this task that can be downloaded from this [link](https://github.com/siamakn/temp_tutorial_16/raw/refs/heads/main/tutorial_16_materials/part_2_files/example_files_upload/computations_data/FHI-aims.zip). 
     
     Download the folder to your local machine at you preferred directory.
 
@@ -295,7 +295,7 @@ In other words, NOMAD will read the input and output files and provide all infor
 #### Task 3.3: Uploading experiments data files
 
 ??? example "Download the example files for this excercise"
-    We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/d/344e53d8e2f341639739/). 
+    We have prepared a set of files for this task that can be downloaded from this [link](https://github.com/siamakn/temp_tutorial_16/raw/refs/heads/main/tutorial_16_materials/part_2_files/example_files_upload/experiments_data/xps_nexus_data.zip). 
     
     Download the folder, then uncompress it to your local machine at you preferred directory.
 
