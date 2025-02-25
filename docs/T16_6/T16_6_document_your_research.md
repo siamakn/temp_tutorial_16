@@ -306,7 +306,7 @@ Once all substances, samples, processes, and measurements are defined, you can i
 ## Exploring and Searching Entries in NOMAD’s ELN
 
 ??? example "Download the example file for this excercise"
-    We have prepared a compressed file for this task, which can be downloaded from this [link](https://github.com/siamakn/temp_tutorial_16/raw/refs/heads/main/tutorial_16_materials/part_3_files/example_NOMAD_ELN.zip).
+    We have prepared a compressed file for this task, which can be downloaded from this [link](https://github.com/siamakn/temp_tutorial_16/raw/refs/heads/main/tutorial_16_materials/part_4_files/example_NOMAD_ELN.zip).
     
     The file contains multiple NOMAD ELN entries in `.json` format.
     
