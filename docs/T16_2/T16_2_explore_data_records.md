@@ -12,7 +12,7 @@ The **EXPLORE** menu allows you to navigate and search through a vast amount of 
     <img src="images/explore_menu2.png" alt="Explore Menu" width="200">
 </div>
 
-Here we focus on searching data in NOMAD using the **Entries** option within the **EXPLORE** menu. You will see an overview of **SOLAR CELLS**, using **The Perovskite Solar Cell Database**.
+Here we focus on searching data in NOMAD using the **Entries** option within the **EXPLORE** menu. You will see an overview of **SOLAR CELLS**.
 
 ---
 
