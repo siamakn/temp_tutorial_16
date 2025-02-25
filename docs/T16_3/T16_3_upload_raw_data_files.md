@@ -183,7 +183,7 @@ Files can be added to an upload individually, or you can group them into a compr
 #### Task 3.1: Uploading miscellaneous files
 
 ??? example "Download the example files for this excercise"
-    We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/d/92b34ea0e8604e64a079/). 
+    We have prepared a set of files for this task that can be downloaded from this [link](https://box.hu-berlin.de/d/92b34ea0e8604e64a079/). [link2](../../tutorial_16_materials/part_3_files/example_files_upload/miscellaneous_data/miscellaneous_data.zip). 
     
     Download the folder, then uncompress it on your local machine at you preferred directory.
 
