@@ -111,10 +111,11 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
 
           sub_sections:
             My_first_subsection:
-              sections:
+              section:
             My_second_subsection:
-              sections:      
+              section:      
         My_second_section:
+        My_third_section:        
     ```
 
 
@@ -138,11 +139,11 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
               - unit: #For example, meters, amperes, or seconds
           sub_sections:
             My_first_subsection:
-              sections:
+              section:
             My_second_subsection:
-              sections:
+              section:
             My_third_subsection:
-              sections:
+              section:
 
         My_second_section:
         My_third_section:          
@@ -169,13 +170,13 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
               m_annotations:
                 annotation_name:
                   key1: value1  
-              sub_sections:
+              sub_section:
                 My_first_subsection:
-                  sections:
+                  section:
                 My_second_subsection:
-                  sections:
+                  section:
                 My_third_subsection:
-                  sections:
+                  section:
 
         My_second_section:
         My_third_section:    
@@ -212,12 +213,12 @@ To build a custom NOMAD ELN, you need to use the NOMAD metainfo schema language,
     Let's inspect one of these quantities together, e.g., `Name_gbu:`. Look at the NOMAD syntax and try too read it like this: "I want a field to add a name for my experiment, it should be a piece of small text. I name this quantity something descriptive, e.g., `Name_gbu`, it should a text, so it will be of type `str`. Although optional, I want it to have some default value, e.g., to guide the user what it, or what it should be filled most often, so I define its default value in the next line `default: Experiment title`. I want it to be editable in the GUI. Therefore, I should define it further by annotations. Which annotation? I now now it is related to ELNs, and it is going to be an editable string quantity, so with some intuition and refering to NOMAD documentation and checking other schemas, I write, and care for the indentations.
 
     ```yaml
-            Name_gbu:
-          type: str  
-          default: Experiment title
-          m_annotations:
-            eln:
-              component: StringEditQuantity
+    Name_gbu:
+      type: str  
+      default: Experiment title
+      m_annotations:
+        eln:
+          component: StringEditQuantity
     ```
     Now let's inspect what subsections does my `Experiment_Information_gbu` have.
     <div style="text-align: center;">
