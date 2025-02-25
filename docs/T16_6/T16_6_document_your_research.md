@@ -37,7 +37,7 @@ On any page in NOMAD, click **PUBLISH**-> click **Uploads**-> click **CREATE A N
 
 
 
-### Built-in Schema for Substances: *Substance ELN*
+### Create a substance entry
 
 Now, let's create an entry using the built-in *Substance ELN* schema for **P3HT powder**. Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Substance ELN* in step 3.
 
@@ -82,7 +82,7 @@ Now, let's create an entry using the built-in *Substance ELN* schema for **P3HT 
 
     > **Tip:** Follow the [steps for creating an entry](#create-an-entry-using-nomads-built-in-schema).
 
-### Built-in Schema for Samples: *Generic Sample ELN*
+### Create a sample entry
 
 Now, let's create an entry using the built-in *Generic Sample ELN* schema for **P3HT Thin Film**. Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Generic Sample ELN* in step 3.
 
@@ -120,7 +120,7 @@ Now, let's create an entry using the built-in *Generic Sample ELN* schema for **
 
     > **Tip:** Follow the [steps for creating an entry](#create-an-entry-using-nomads-built-in-schema).
 
-### Built-in Schema for Instruments: *Instrument ELN*
+### Create an instrument entry
 
 Now, let's create an entry using the built-in *Instrument ELN* schema for **UV Ozone Cleaner**. Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Instrument ELN* in step 3.
 
@@ -161,7 +161,7 @@ Now, let's create an entry using the built-in *Instrument ELN* schema for **UV O
 
 
     ```md
-### Built-in Schema for Material Processing: *Material Processing ELN*
+### Create a process entry
 
 Now, let's create an entry using the built-in *Material Processing ELN* schema for **Preparation of P3HT solution in chloroform**. Follow the steps for [creating an entry using NOMAD's Built-in Schema.](#create-an-entry-using-nomads-built-in-schema) and select *Material Processing ELN* in step 3.
 
@@ -266,7 +266,7 @@ Now, let's create an entry using the built-in *Material Processing ELN* schema f
     something like: please download these files from here and drag and drop them to your upload.
 
 
-### Built-in Schema for Measurements: *Measurement ELN*
+### Create a measurement entry
 
 Similar to the examples given above, you can also create an entry using the built-in *Measurement ELN* schema for your measurements.
 
@@ -279,7 +279,7 @@ Similar to the examples given above, you can also create an entry using the buil
     - Subsections such as **steps**, **samples**, **instruments** used in measurement.
 
 
-### *Experiment ELN* Schema: Integrating Your Experiment
+### Integrate your experiment
 
 Once all substances, samples, processes, and measurements are defined, you can integrate them into a structured workflow using the *Experiment ELN* schema. The *Experiment ELN* schema allows linking **processes** and **measurements** into a single entry for a comprehensive overview of your experiment.
 
@@ -303,25 +303,95 @@ Once all substances, samples, processes, and measurements are defined, you can i
         <img src="images/create_built-in_schema/interactive_work_flow.gif" alt="interactive workflow gif" width="400">
     </div>  
 
-<!--
+## Exploring and Searching Entries in NOMAD’s ELN
 
-### Organize your files using NOMAD
+??? example "Download the example file for this excercise"
+    We have prepared a compressed file for this task that can be downloaded from this [link](link)
+    
+    The file contains several NOMAD ELN entries in `.json` format.
+    
+    These entries were created using the NOMAD ELN built-schema, organized into folders, and categorized with custom tags.
+    
+    You can drag-and-drop this file into a new upload in NOMAD to view its contents.
 
-NOMAD is a file-based system, allowing structured data management. You can access, organize, and download your files within each upload. You can also create folders to categorize entries into materials, samples, instruments, processes, and results as well as upload additional documents, such as relevant pdf documents.
+Imagine you've created multiple entries of substances, samples, instruments, processes, and measurements, and need to quickly find a specific experiment or material. Instead of manually going through files, NOMAD’s ELN allows you to search, filter, and organize your entries—saving you time and effort.
 
-??? example "Example: Organizing Files in NOMAD"
-    - Navigate to the **FILES** tab in your upload.
-    - View and manage files like in a file explorer. 
+??? info "Organizing your ELN entries"
+    NOMAD is a file-based system, allowing structured data management. You can access, organize, and download your files within each upload. You can also create folders to categorize entries into materials, samples, instruments, processes, and results as well as upload additional documents, such as relevant pdf documents.
+
+    !!! warning "If you plan to organize your entries into separate folders, do so before referencing them to each other. Moving them afterward may break reference links." 
+
+    You can follow the following steps to organize your ELN entries:
+
+    1. Navigate to the **FILES** tab in your upload. This view functions like a file explorer, allowing you to view and manage files. 
     <div style="text-align: center;">
-        <img src="images/organization/files_explorer_in_NOMAD.png" alt="interactive workflow gif" width="400">
+    <img src="images/organization/files_explorer_in_NOMAD.png" alt="interactive workflow gif" width="400">
     </div>  
+
+    2. Add new folders and organize them according to your needs.
     <div style="text-align: center;">
         <img src="images/organization/creating_new_folders.gif" alt="interactive workflow gif" width="400">
-    </div>  
+    </div>
+
+    3. Drag and drop files into the desired folder. A prompt will appear, asking if you want to copy or move the files—choose accordingly.
     <div style="text-align: center;">
         <img src="images/organization/moving_files_to_a_folder.gif" alt="interactive workflow gif" width="400">
-    </div>  
+    </div>
+
+    4. Once all files are sorted, take a moment to review the structure. Here’s an example of a well-organized ELN
     <div style="text-align: center;">
         <img src="images/organization/after_organization.png" alt="interactive workflow gif" width="400">
     </div>  
--->
+
+**Searching your ELN**
+
+To search for entries in your ELN, follow these steps:
+
+1. on the top of the ELN upload page, click on the <img src="images/organization/icon_search_upload.png" alt="Search ELN icon" width="15"> icon at the top of the page.
+![screenshot of step 1](images/organization/explore_ELN_step_1.png)
+
+2. From the drop-down menu, select ENTRIES.
+![Screenshot of step 2](images/organization/explore_ELN_step_2.png)
+
+This will open the NOMAD EXPLORE page with a filter applied to display only the entries from your upload.  
+
+![screenshot of NOMAD EXPLORE page wiht the filter applied](images/organization/explore_ELN_step_2r.png)
+
+??? info "Searching and filtering entries in NOMAD"
+    NOMAD provides two ways to filter and find your ELN entries efficiently: 
+
+    - Filter by built-in schema used to narrow down your search.
+    - Filter by custom tags, where you assign common tags to related entries for easy grouping.
+    For example, tag all solvents as "my_solvent" or all samples as "my_samples"
+
+    Using these filters helps you quickly locate specific entries in your ELN.
+
+**Customize your search interface with widgets**
+
+Widgets allow you to tailor your search interface to better suit data exploration needs. By adding and rearranging widgets, you can create a personalized view that highlights the most relevant filters, metadata, or visualizations for your research.
+
+??? task "Create a widget for ELN sections and custom tags"
+    To create a widget to filter your ELN follow the following steps:
+    
+    1. Click on the `+ TERMS` button, to open the *Edit terms widget* menu. 
+    ![screenshot of step 1](images/organization/widget_step_1.png)
+
+    2. Start by typing "eln" in the Search quantity field. A list of possible filters will appear.
+
+    3. Select `results.eln.sections` from the menu. This will display a filter based on the types of ELN built-in templates available in your ELN.
+    ![screenshot of steps 2 and 3](images/organization/widget_step_2_3.png) 
+
+    4. Write a descriptive title for the widget in Title field.
+    5. Click DONE!
+    ![screenshot of steps 4 and 5](images/organization/widget_step_4_5.png)
+
+    The new ELN sections widget will now appear at the top of your EXPLORE page, displaying ELN entry types along with their corresponding counts.
+    ![screenshot of the widget](images/organization/widget_step_5r.png)
+
+    You can now follow the same steps to create a widget for filtering by custom tags.
+
+    In Step 3, instead of selecting results.eln.sections, choose results.eln.tags. This will create a widget that filters your ELN entries based on the custom tags you have assigned.
+
+    This widget will then appear on your EXPLORE page, allowing you to quickly view and filter entries by their associated tags.
+
+    ![animation of filtering using widgets](images/organization/explore_you_ELN_entries.gif)
